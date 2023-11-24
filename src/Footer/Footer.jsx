@@ -6,7 +6,7 @@ const Footer = () => {
         <div>
     <footer className="footer footer-center  bg-[#24252a] text-primary-content ">
         <div className="flex pt-20   ">
-        <div className="text-2xl font-bold ">
+        <div className="text-4xl font-bold ">
         <span className="text-[#0f829f]">Tech</span>Boat
         </div>
             
