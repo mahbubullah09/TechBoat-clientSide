@@ -11,15 +11,19 @@
   },
   "dependencies": {
     "axios": "^1.6.0",
-    "firebase": "^10.5.2",
+    "firebase": "^10.6.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.17.0",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.8.0",
+    "timeago-react": "^3.0.6",
+    "timeago.js": "^4.0.2",
     "tw-elements-react": "^1.0.0-alpha1"
   },
   "devDependencies": {

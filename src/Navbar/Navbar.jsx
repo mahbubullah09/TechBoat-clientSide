@@ -1,15 +1,11 @@
 // import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
-
-// import { AuthContext } from "../Provider/authProvider";
-
+import { AuthContext } from "../Provider/AuthProvider";
+import { useContext } from "react";
 
 const Navbar = () => {
-
-//   const {user,logOut} = useContext(AuthContext);
-//   console.log(user);
-const user= false;
-
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   const navLink = (
     <div className=" gap-2 flex flex-col lg:flex-row ">
@@ -28,7 +24,7 @@ const user= false;
           <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
         </NavLink>
       </ul>
-     
+
       <ul className="py-1 relative group">
         <NavLink
           to="/product"
@@ -44,9 +40,6 @@ const user= false;
           <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
         </NavLink>
       </ul>
-     
-
-     
     </div>
   );
 
@@ -78,14 +71,16 @@ const user= false;
               {navLink}
             </ul>
           </div>
-         <Link className="text-2xl font-bold" to={'/'}>
-         <span className="text-[#0f829f]">Tech</span>Boat
-         </Link>
+          <Link className="text-2xl font-bold" to={"/"}>
+            <span className="text-[#0f829f]">Tech</span>Boat
+          </Link>
         </div>
-        
+
         <div className="navbar-end">
-        <ul className="menu menu-horizontal px-4 hidden lg:block">{navLink}</ul>
-          
+          <ul className="menu menu-horizontal px-4 hidden lg:block">
+            {navLink}
+          </ul>
+
           {user?.email ? (
             <div className="cursor-pointer mr-2 flex items-center gap-2">
               <div className="dropdown dropdown-end ">
@@ -98,34 +93,33 @@ const user= false;
                         alt=""
                       />
                     ) : (
-                      <div className=" text-4xl">
-                        {" "}
-                     
-                      </div>
+                      <div className=" text-4xl"> </div>
                     )}
                   </div>
                 </label>
                 <ul
                   tabIndex={0}
-                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                  className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60 text-black overflow-hidden "
                 >
-                  
-
-                  <li>
-                    <a>{user?.displayName}</a>
-                  </li>
-                  <li>
-                    <a>{user?.email}</a>
-                  </li>
+                 <div className="space-y-2">
+                 <div>
+                    <p>{user?.displayName}</p>
+                  </div>
+                  <div>
+                    <p className="w-52">{user?.email}</p>
+                  </div>
+                  <div>
+                    <div>
+                      <button
+                        className="  text-sm md:text-base font-semibold hover:bg-[#e9c836] hover:text-black bg-[#ffcf00]  text-black py-1 px-2 md:py-2 md:px-4 rounded-md hover:bg-blue-gray-800"
+                        onClick={logOut}
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                 </div>
                 </ul>
-              </div>
-              <div>
-                <button
-                  className="  text-sm md:text-base font-semibold hover:bg-[#e9c836] hover:text-black bg-[#ffcf00]  text-black py-1 px-2 md:py-2 md:px-4 rounded-md hover:bg-blue-gray-800"
-                  onClick={logOut}
-                >
-                  Logout
-                </button>
               </div>
             </div>
           ) : (

@@ -1,0 +1,57 @@
+[
+    {
+      "image": "https://picsum.photos/200/300?image=1026",
+      "name": "AI Detects Cancer in Blood",
+      "description": "An AI-powered microscope identifies cancer cells in blood samples with high accuracy, potentially enabling early detection and treatment.",
+      "tag": ["AI", "cancer", "microscope"],
+      "external_link": "https://www.nature.com/articles/s41591-023-02114-w",
+      "vote_count": 10,
+      "time": "2023-11-25 16:59:10"
+    },
+    {
+      "image": "https://picsum.photos/200/300?image=1027",
+      "name": "Robot Folds and Stores Laundry",
+      "description": "A new robot uses AI to sort, fold, and store laundry items, saving time and effort for busy individuals.",
+      "tag": ["robot", "laundry", "AI"],
+      "external_link": "https://www.theverge.com/2023/11/14/25078234/foldimate-laundry-folding-robot-price-release",
+      "vote_count": 15,
+      "time": "2023-11-25 16:59:10"
+    },
+    {
+      "image": "https://picsum.photos/200/300?image=1028",
+      "name": "VR Headset Simulates Any Environment",
+      "description": "A high-tech VR headset with eye-tracking technology creates realistic and immersive experiences, simulating any imaginable environment.",
+      "tag": ["VR", "environment", "simulation"],
+      "external_link": "https://uploadvr.com/varjo-reality-one-x-hands-on-review-2023/",
+      "vote_count": 20,
+      "time": "2023-11-25 16:59:10"
+    },
+    {
+      "image": "https://picsum.photos/200/300?image=1029",
+      "name": "Drug Shows Promise for Alzheimer's",
+      "description": "A new drug called lecanemab slows the decline of cognitive function in people with early-stage Alzheimer's disease, offering hope for treatment.",
+      "tag": ["Alzheimer's", "drug", "treatment"],
+      "external_link": "https://www.thelancet.com/journals/laneur/article/PIIS2352-3127(23)91544-2/fulltext",
+      "vote_count": 25,
+      "time": "2023-11-25 16:59:10"
+    },
+    {
+      "image": "https://picsum.photos/200/300?image=1030",
+      "name": "Less Meat May Lower Heart Disease Risk",
+      "description": "A new study suggests that reducing meat consumption may lower the risk of developing heart disease, promoting a healthier lifestyle.",
+      "tag": ["health", "diet", "heart disease"],
+      "external_link": "https://www.bmj.com/open-bmj/article/2023/11/02/bmj-open-2023-036971",
+      "vote_count": 30,
+      "time": "2023-11-25 17:02:10"
+    },
+    {
+      "image": "https://picsum.photos/200/300?image=1031",
+      "name": "AI-Powered Language Model Impresses",
+      "description": "A large language model called Bard demonstrates impressive capabilities in generating text, translating languages, and answering questions.",
+      "tag": ["AI", "language", "model"],
+      "external_link": "https://ai.googleblog.com/2022/01/lamda-language-model-for-dialogue.html",
+      "vote_count": 35,
+      }
+    ]
+
+  
