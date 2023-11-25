@@ -6,49 +6,54 @@ import { useContext } from "react";
 
 import axios from "axios";
 import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 
 const LogIn = () => {
- const  {login} = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location);
+  const navigate = useNavigate();
 
- const location = useLocation();
+  const {user,login} = useContext(AuthContext);
+
+const handleLogIn = (event) => {
+  event.preventDefault();
 
 
- const navigate = useNavigate();
+  const email = event.target.email.value;
+    const password = event.target.password.value;
+  console.log(email,password);
 
-    const handleData = event =>{
-        event.preventDefault();
-      
-        const email = event.target.email.value;
-        const password= event.target.password.value;
+  // if (password.length < 6) {
+  //     toast.error("Password must be at least 6 charecter!");
+  //     return;
+  //   }
 
-        login(email,password)
-        .then(result =>{
-          const user = result.user
-          console.log(user)
-
-          const loggeinUser = {email};
-
-          axios.post('http://localhost:5000/jwt' , loggeinUser,{
-            withCredentials: true
-          })
-          .then(res => {
-            console.log(res.data)
-            if(res.data.success){
-              navigate(location.state ? location.state : '/')
   
-            }})
-        
-               
-        
-        })
-        .catch(error => console.log(error))
+  //login user
+  login(email, password)
+    .then((res) => {
+      toast.success('Succesfully logged in')
 
-        console.log(email,password);
-        
+      navigate(location?.state ? location.state : '/')
 
-    }
+
+  
+  })
+    .catch((error) => {
+
+     
+      toast.error('Invalid Email or Password');
+      
+      
+    
+    
+    });
+
+
+
+};
   return (
     <div>
       <section className="h-screen max-w-5xl mx-auto">
@@ -65,7 +70,7 @@ const LogIn = () => {
             <div className="rounded  mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12 border border-1 p-10">
 
                 <h2 className=" font-bold text-4xl text-[#444444] text-center mb-8 ">Log In</h2>
-              <form onSubmit={handleData}>
+              <form onSubmit={handleLogIn }>
                
 
              
