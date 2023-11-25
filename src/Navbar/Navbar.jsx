@@ -93,7 +93,11 @@ const Navbar = () => {
                         alt=""
                       />
                     ) : (
-                      <div className=" text-4xl"> </div>
+                      <div className="avatar placeholder">
+                      <div className="bg-neutral text-neutral-content rounded-full w-8">
+                        <span className="text-xs">N</span>
+                      </div>
+                    </div>
                     )}
                   </div>
                 </label>

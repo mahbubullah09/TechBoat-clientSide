@@ -25,10 +25,10 @@ const handleLogIn = (event) => {
     const password = event.target.password.value;
   console.log(email,password);
 
-  // if (password.length < 6) {
-  //     toast.error("Password must be at least 6 charecter!");
-  //     return;
-  //   }
+  if (password.length < 6) {
+      toast.error("Password must be at least 6 charecter!");
+      return;
+    }
 
   
   //login user
