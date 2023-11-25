@@ -1,57 +1,210 @@
 [
-    {
-      "image": "https://picsum.photos/200/300?image=1026",
-      "name": "AI Detects Cancer in Blood",
-      "description": "An AI-powered microscope identifies cancer cells in blood samples with high accuracy, potentially enabling early detection and treatment.",
-      "tag": ["AI", "cancer", "microscope"],
-      "external_link": "https://www.nature.com/articles/s41591-023-02114-w",
-      "vote_count": 10,
-      "time": "2023-11-25 16:59:10"
-    },
-    {
-      "image": "https://picsum.photos/200/300?image=1027",
-      "name": "Robot Folds and Stores Laundry",
-      "description": "A new robot uses AI to sort, fold, and store laundry items, saving time and effort for busy individuals.",
-      "tag": ["robot", "laundry", "AI"],
-      "external_link": "https://www.theverge.com/2023/11/14/25078234/foldimate-laundry-folding-robot-price-release",
-      "vote_count": 15,
-      "time": "2023-11-25 16:59:10"
-    },
-    {
-      "image": "https://picsum.photos/200/300?image=1028",
-      "name": "VR Headset Simulates Any Environment",
-      "description": "A high-tech VR headset with eye-tracking technology creates realistic and immersive experiences, simulating any imaginable environment.",
-      "tag": ["VR", "environment", "simulation"],
-      "external_link": "https://uploadvr.com/varjo-reality-one-x-hands-on-review-2023/",
-      "vote_count": 20,
-      "time": "2023-11-25 16:59:10"
-    },
-    {
-      "image": "https://picsum.photos/200/300?image=1029",
-      "name": "Drug Shows Promise for Alzheimer's",
-      "description": "A new drug called lecanemab slows the decline of cognitive function in people with early-stage Alzheimer's disease, offering hope for treatment.",
-      "tag": ["Alzheimer's", "drug", "treatment"],
-      "external_link": "https://www.thelancet.com/journals/laneur/article/PIIS2352-3127(23)91544-2/fulltext",
-      "vote_count": 25,
-      "time": "2023-11-25 16:59:10"
-    },
-    {
-      "image": "https://picsum.photos/200/300?image=1030",
-      "name": "Less Meat May Lower Heart Disease Risk",
-      "description": "A new study suggests that reducing meat consumption may lower the risk of developing heart disease, promoting a healthier lifestyle.",
-      "tag": ["health", "diet", "heart disease"],
-      "external_link": "https://www.bmj.com/open-bmj/article/2023/11/02/bmj-open-2023-036971",
-      "vote_count": 30,
-      "time": "2023-11-25 17:02:10"
-    },
-    {
-      "image": "https://picsum.photos/200/300?image=1031",
-      "name": "AI-Powered Language Model Impresses",
-      "description": "A large language model called Bard demonstrates impressive capabilities in generating text, translating languages, and answering questions.",
-      "tag": ["AI", "language", "model"],
-      "external_link": "https://ai.googleblog.com/2022/01/lamda-language-model-for-dialogue.html",
-      "vote_count": 35,
-      }
-    ]
-
-  
+  {
+    "image": "https://picsum.photos/200/300?image=1026",
+    "name": "Phone with Smart AI Assistant", 
+    "description": "This phone features an intelligent AI assistant that learns your habits to provide personalized help through natural language processing. It seamlessly integrates into your daily life to enhance every aspect of your mobile experience.",
+    "tags": [
+      {"id": "mobile", "text": "Mobile"},
+      {"id": "ai", "text": "AI"},
+      {"id": "electronics", "text": "Electronics"}
+    ],
+    "external_link": "https://example.com/phone1",
+    "vote_count": 35,
+    "time": "2023-11-25 17:05:10 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=856",
+    "name": "Wireless Noise-Cancelling Headphones",
+    "description": "Experience exceptional audio quality with these Bluetooth headphones featuring active noise cancellation to immerse you completely in your music or calls.",  
+    "tags": [
+      {"id": "audio", "text": "Audio"},
+      {"id": "music", "text": "Music"}, 
+      {"id": "electronics", "text": "Electronics"}
+    ],
+    "external_link": "https://example.com/headphones1", 
+    "vote_count": 29,
+    "time": "2023-11-24 13:15:03 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=177",
+    "name": "Smart Robot Vacuum",
+    "description": "This app-controlled robot vacuum makes cleaning efficient with customized schedules, selective room cleaning, and advanced navigation.",
+    "tags": [
+      {"id": "home", "text": "Home"},
+      {"id": "appliances", "text": "Appliances"},  
+      {"id": "electronics", "text": "Electronics"}
+    ],
+    "external_link": "https://example.com/vacuum1",
+    "vote_count": 20, 
+    "time": "2023-11-23 12:30:15 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=856",
+    "name": "360 Camera Drone", 
+    "description": "Capture stunning aerial panoramic footage in 4K with this easy-to-fly drone featuring collision detection and auto return home.",
+    "tags": [
+      {"id": "drones", "text": "Drones"},
+      {"id": "photography", "text": "Photography"},
+      {"id": "electronics", "text": "Electronics"}  
+    ],
+    "external_link": "https://example.com/drone1",
+    "vote_count": 16,
+    "time": "2023-11-22 09:45:06 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=123",
+    "name": "Fitness Tracker Watch",
+    "description": "Stay on top of your health and fitness goals with this stylish smartwatch that tracks heart rate, sleep, activity and more.",
+    "tags": [
+      {"id": "fitness", "text": "Fitness"}, 
+      {"id": "health", "text": "Health"},
+      {"id": "wearables", "text": "Wearables"}
+    ],  
+    "external_link": "https://example.com/watch1",
+    "vote_count": 27,
+    "time": "2023-11-21 15:20:10 am" 
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=852",
+    "name": "Smart Display Speaker",
+    "description": "Listen to music, podcasts and audiobooks on this WiFi and Bluetooth speaker while accessing your virtual assistant and viewing visual info like calendar events and weather forecasts.",
+    "tags": [ 
+      {"id": "audio", "text": "Audio"}, 
+      {"id": "home", "text": "Home"},
+      {"id": "smart", "text": "Smart"}
+    ],
+    "external_link": "https://example.com/speaker1",
+    "vote_count": 11,
+    "time": "2023-11-20 19:30:45 am"
+  }, 
+  {
+    "image": "https://picsum.photos/200/300?image=856",
+    "name": "VR Gaming Headset",  
+    "description": "Dive into incredible virtual worlds, play your favorite games in a whole new way and enjoy an immersive media experience with this advanced VR headset.", 
+    "tags": [
+      {"id": "gaming", "text": "Gaming"},  
+      {"id": "vr", "text": "VR"},
+      {"id": "electronics", "text": "Electronics"}
+    ],
+    "external_link": "https://example.com/headset1",
+    "vote_count": 23,
+    "time": "2023-11-19 20:45:17 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=123", 
+    "name": "360 Camera",
+    "description": "Capture the full panoramic view in stunning detail with this easy-to-use 360 camera featuring built-in image stabilization.",
+    "tags": [ 
+      {"id": "photography", "text": "Photography"}, 
+      {"id": "video", "text": "Video"},
+      {"id": "electronics", "text": "Electronics"} 
+    ],
+    "external_link": "https://example.com/camera1", 
+    "vote_count": 15, 
+    "time": "2023-11-18 11:05:35 am"
+  }, 
+  {
+    "image": "https://picsum.photos/200/300?image=178",
+    "name": "Smart Baby Monitor",  
+    "description": "Keep an eye on your little one with this WiFi baby monitor allowing you to view and listen from your phone, get alerts and access advanced analytics.", 
+    "tags": [
+      {"id": "baby", "text": "Baby"},
+      {"id": "home", "text": "Home"}, 
+      {"id": "smart", "text": "Smart"}
+    ],
+    "external_link": "https://example.com/monitor1",
+    "vote_count": 10,
+    "time": "2023-11-17 14:35:10 am" 
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=123",
+    "name": "Kids Tablet", 
+    "description": "Designed just for kids, this durable tablet has parental controls and access to over 20,000 popular books, learning apps, games and videos screened for age-appropriateness.",
+    "tags": [
+      {"id": "tablet", "text": "Tablet"}, 
+      {"id": "education", "text": "Education"},
+      {"id": "kids", "text": "Kids"}
+    ],
+    "external_link": "https://example.com/tablet1",
+    "vote_count": 12,
+    "time": "2023-11-16 13:20:35 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=178", 
+    "name": "Laptop with Stylus",
+    "description": "Power through projects on the go with this lightweight laptop featuring a touchscreen display for natural writing and drawing with the pressure-sensitive stylus.",
+    "tags": [
+      {"id": "laptop", "text": "Laptop"},
+      {"id": "productivity", "text": "Productivity"}, 
+      {"id": "electronics", "text": "Electronics"}
+    ],
+    "external_link": "https://example.com/laptop1",
+    "vote_count": 19,
+    "time": "2023-11-15 08:55:20 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=852",
+    "name": "Mirrorless Camera", 
+    "description": "Take professional-quality photos and videos without the bulk using this mirrorless digital camera that delivers speedy autofocus and expanded creative options.",
+    "tags": [
+      {"id": "camera", "text": "Camera"},
+      {"id": "photography", "text": "Photography"},
+      {"id": "electronics", "text": "Electronics"} 
+    ],
+    "external_link": "https://example.com/camera2",
+    "vote_count": 27,
+    "time": "2023-11-14 16:05:35 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=123",
+    "name": "Noise Cancelling Earbuds",
+    "description": "Tune in to exceptional JBL sound without distractions using these Bluetooth earbuds with active noise cancellation and an adaptive listening experience.", 
+    "tags": [
+      {"id": "audio", "text": "Audio"},  
+      {"id": "music", "text": "Music"},
+      {"id": "wearables", "text": "Wearables"}
+    ],
+    "external_link": "https://example.com/earbuds1",
+    "vote_count": 32,
+    "time": "2023-11-13 11:45:10 am"
+  },
+  { 
+    "image": "https://picsum.photos/200/300?image=178",
+    "name": "Foldable Smartphone", 
+    "description": "Stay productive and entertained anywhere with this sleek foldable touchscreen smartphone featuring stylish design, versatile usage modes and the latest innovative features.",
+    "tags": [   
+      {"id": "mobile", "text": "Mobile"},
+      {"id": "smart", "text": "Smart"}, 
+      {"id": "electronics", "text": "Electronics"}
+    ],
+    "external_link": "https://example.com/phone2",
+    "vote_count": 25,
+    "time": "2023-11-12 09:20:55 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=852", 
+    "name": "Smart Security Camera",
+    "description": "Monitor your home day and night using this full HD indoor/outdoor security camera with intelligent alerts, facial recognition and easy smartphone viewing.",
+    "tags": [
+      {"id": "security", "text": "Security"},
+      {"id": "home", "text": "Home"},
+      {"id": "smart", "text": "Smart"}
+    ], 
+    "external_link": "https://example.com/camera3",
+    "vote_count": 16, 
+    "time": "2023-11-11 12:35:40 am"
+  },
+  {
+    "image": "https://picsum.photos/200/300?image=1026",
+    "name": "Wireless Earbuds",
+    "description": "Experience exceptional sound quality on the go with these Bluetooth earbuds providing up to 24 hours total listening time with the included wireless charging case.",
+    "tags": [ 
+      {"id": "audio", "text": "Audio"},
+      {"id": "music", "text": "Music"},
+      {"id": "wearables", "text": "Wearables"}
+    ],
+    "external_link": "https://example.com/earbuds2",
+    "vote_count": 19,
+    "time": "2023-11-10 15:55:15 am"
+  } 
+]

@@ -8,52 +8,36 @@ import axios from "axios";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
-
-
 const LogIn = () => {
   const location = useLocation();
   console.log(location);
   const navigate = useNavigate();
 
-  const {user,login} = useContext(AuthContext);
+  const { user, login } = useContext(AuthContext);
 
-const handleLogIn = (event) => {
-  event.preventDefault();
+  const handleLogIn = (event) => {
+    event.preventDefault();
 
-
-  const email = event.target.email.value;
+    const email = event.target.email.value;
     const password = event.target.password.value;
-  console.log(email,password);
+    console.log(email, password);
 
-  if (password.length < 6) {
+    if (password.length < 6) {
       toast.error("Password must be at least 6 charecter!");
       return;
     }
 
-  
-  //login user
-  login(email, password)
-    .then((res) => {
-      toast.success('Succesfully logged in')
+    //login user
+    login(email, password)
+      .then((res) => {
+        toast.success("Succesfully logged in");
 
-      navigate(location?.state ? location.state : '/')
-
-
-  
-  })
-    .catch((error) => {
-
-     
-      toast.error('Invalid Email or Password');
-      
-      
-    
-    
-    });
-
-
-
-};
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        toast.error("Invalid Email or Password");
+      });
+  };
   return (
     <div>
       <section className="my-8 max-w-5xl mx-auto">
@@ -68,26 +52,20 @@ const handleLogIn = (event) => {
             </div>
 
             <div className="rounded  mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12 border border-1 p-10">
-
-                <h2 className=" font-bold text-4xl text-[#444444] text-center mb-8 ">Log In</h2>
-              <form onSubmit={handleLogIn }>
-               
-
-             
-
-                 <p className="mb-3">Email</p>
+              <h2 className=" font-bold text-4xl text-[#444444] text-center mb-8 ">
+                Log In
+              </h2>
+              <form onSubmit={handleLogIn}>
+                <p className="mb-3">Email</p>
 
                 <div className="relative mb-6" data-te-input-wrapper-init>
-                   
                   <input
                     type="text"
                     className="border block h-12 w-full rounded border-1 bg-transparent px-3 py-[0.32rem] "
                     name="email"
                     placeholder="Email address"
                   />
-                  
                 </div>
-
 
                 <p className="mb-3">Password</p>
 
@@ -98,29 +76,30 @@ const handleLogIn = (event) => {
                     id="password"
                     placeholder="Password"
                   />
-                 
                 </div>
 
-                <button type="submit" className="bg-[#FF3811] w-full rounded py-2 text-white font-bold">Sing Up</button>
+                <button
+                  type="submit"
+                  className="bg-[#FF3811] w-full rounded py-2 text-white font-bold"
+                >
+                  Sing Up
+                </button>
+                </form>
 
-              
-
-                
                 <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+                  <SocialLogIN />
+                </div>
 
-<SocialLogIN/>
-</div>
-
-<p className="mb-0 mt-2 pt-1 text-sm font-semibold text-center">
-      Don't have an account?
-      <Link to={'/singup'}
-     
-        className="text-danger text-[#FF3811]  font-bold transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
-      >
-       Sing Up
-      </Link>
-    </p>
-              </form>
+                <p className="mb-0 mt-2 pt-1 text-sm font-semibold text-center">
+                  Don't have an account?
+                  <Link
+                    to={"/singup"}
+                    className="text-danger text-[#FF3811]  font-bold transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
+                  >
+                    Sing Up
+                  </Link>
+                </p>
+             
             </div>
           </div>
         </div>

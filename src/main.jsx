@@ -9,6 +9,8 @@ import Home from './Home/Home';
 import LogIn from './Authentication/LogIn';
 import AuthProvider from './Provider/AuthProvider';
 import SingUp from './Authentication/SingUp';
+import TAGTEST from './TAGTEST';
+import Tagtest from './TAGTEST';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
       {
         path:'/singup',
         element: <SingUp/>
+      },
+      {
+        path:'/tag',
+        element: <Tagtest/>
       },
     ],
   },
