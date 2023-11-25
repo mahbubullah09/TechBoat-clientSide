@@ -56,7 +56,7 @@ const handleLogIn = (event) => {
 };
   return (
     <div>
-      <section className="h-screen max-w-5xl mx-auto">
+      <section className="my-8 max-w-5xl mx-auto">
         <div className="h-full">
           <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
             <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
