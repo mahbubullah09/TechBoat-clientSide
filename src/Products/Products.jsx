@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
+import useAxiosPublic from '../hooks/usePublic';
 
 const Products = () => {
-
+    const axiosPublic = useAxiosPublic()
     const [data,setData] = useState([])
+
     
 
     useEffect(() => {
-        fetch('../../public/fakeData.json')
-        .then(response => response.json())
+//         fetch('http://localhost:5000/products')
+//         .then(response => response.json())
    
- .then(data => setData(data))
+//  .then(data => setData(data))
 
-    },[setData])
+axiosPublic.get('/products')
+.then(res =>{
+    setData(res.data);
+})
+.catch(error =>{
+    console.error(error);
+})
+
+    },[axiosPublic])
    
     const sortedData = data.sort((a, b) => {
         const timeA = new Date(a.time);
