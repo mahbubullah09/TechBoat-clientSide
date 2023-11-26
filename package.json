@@ -23,6 +23,7 @@
     "react-tag-input": "^6.8.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.8.0",
+    "swiper": "^11.0.5",
     "timeago-react": "^3.0.6",
     "timeago.js": "^4.0.2",
     "tw-elements-react": "^1.0.0-alpha1"

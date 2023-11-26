@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import moment from 'moment';
 import toast from 'react-hot-toast';
+import ReviewCard from './ReviewCard';
 
 const Review = ({data}) => {
     const id = data?._id
@@ -124,6 +125,8 @@ const Review = ({data}) => {
           </div>
         </dialog>
         <hr />
+
+        <ReviewCard id={id}/>
             
             
         </div>
