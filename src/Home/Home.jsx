@@ -6,6 +6,7 @@ import TimeAgo from "timeago-react";
 
 // import it first.
 import vi from "timeago.js/lib/lang/vi";
+import Trending from "./Trending";
 
 const Home = () => {
   const data = [
@@ -36,6 +37,8 @@ const Home = () => {
   return (
     <div className="max-w-6xl mx-auto my-2">
       <Baner />
+
+      <Trending/>
 
       <TimeAgo datetime={"2023-11-25 4:17:31 pm"} />
     </div>

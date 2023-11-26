@@ -27,7 +27,7 @@ const Products = () => {
         return timeB.getTime() - timeA.getTime();
       });
     
-      console.log(sortedData);
+   
    
 
 
