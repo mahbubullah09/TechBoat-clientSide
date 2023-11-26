@@ -1,7 +1,9 @@
 import Tags from "./Tag";
 import Tag from "./Tag";
+import TimeAgo from 'timeago-react';
 
 const ProductCard = ({ data }) => {
+  
   return (
     <div>
       <div className="antialiased text-gray-900 ">
@@ -28,16 +30,8 @@ const ProductCard = ({ data }) => {
                 <span className="text-gray-600 text-sm">/ wk</span>
               </div>
               <div className="mt-2 flex items-center">
-                <span className="text-teal-600 font-semibold">
-                  <span>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
-                  </span>
-                </span>
-                <span className="ml-2 text-gray-600 text-sm">34 reviews</span>
+             
+                <h2 className=" text-gray-600 text-sm"><TimeAgo datetime={data?.time} /></h2>
               </div>
             </div>
           </div>
