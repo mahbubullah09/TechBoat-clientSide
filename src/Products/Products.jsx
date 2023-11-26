@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 const Products = () => {
 
     const [data,setData] = useState([])
+    
 
     useEffect(() => {
         fetch('../../public/fakeData.json')
@@ -12,6 +13,25 @@ const Products = () => {
  .then(data => setData(data))
 
     },[setData])
+   
+    const sortedData = data.sort((a, b) => {
+        const timeA = new Date(a.time);
+        const timeB = new Date(b.time);
+    
+        // Compare dates first
+        if (timeA.toDateString() !== timeB.toDateString()) {
+          return timeB - timeA;
+        }
+    
+        // If the dates are the same, compare times
+        return timeB.getTime() - timeA.getTime();
+      });
+    
+      console.log(sortedData);
+   
+
+
+
     
     return (
         <div className='max-w-6xl mx-auto'>
@@ -22,9 +42,9 @@ const Products = () => {
                 <button  className="bg-[#0D6EFD] text-white text-sm font-semibold px-4 py-2 rounded">Search</button>
             </div>
 
-            <div className='grid grid-cols-4 gap-2 '>
+            <div className='grid grid-cols-4 gap-2  my-4'>
                 {
-                    data.map((data, i) => <ProductCard key={i} data={data}/>)
+                    sortedData.map((data, i) => <ProductCard key={i} data={data}/>)
                 }
 
             </div>

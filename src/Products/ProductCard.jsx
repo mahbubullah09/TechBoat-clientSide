@@ -1,9 +1,12 @@
 import Tags from "./Tag";
 import Tag from "./Tag";
-import TimeAgo from 'timeago-react';
+import TimeAgo from "timeago-react";
+import { BiDownvote, BiUpvote } from "react-icons/bi";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const ProductCard = ({ data }) => {
-  
+    const {user} = useContext(AuthContext)
   return (
     <div>
       <div className="antialiased text-gray-900 ">
@@ -25,13 +28,31 @@ const ProductCard = ({ data }) => {
                 {data?.name}
               </h4>
 
-              <div className="mt-1">
-                <span>$1,900.00</span>
-                <span className="text-gray-600 text-sm">/ wk</span>
+              <div className="mt-1 flex items-center gap-2 text-lg">
+                <div className="flex items-center gap-1">
+                  {
+                    user? <button className="text-xl"><BiUpvote /></button>
+                    :<p className="text-xl"><BiUpvote /></p>
+
+                  }
+
+                  <h2> {data?.vote_count}</h2>
+                </div>
+
+               <div className="flex items-center gap-1">
+                {
+                    user?   <button className="text-xl"><BiDownvote /> </button>
+                    :   <p className="text-xl"><BiDownvote /> </p>
+                }
+             
+                <h2> {data?.dvote_count}</h2>
+               </div>
+
               </div>
               <div className="mt-2 flex items-center">
-             
-                <h2 className=" text-gray-600 text-sm"><TimeAgo datetime={data?.time} /></h2>
+                <h2 className=" text-gray-600 text-sm">
+                  <TimeAgo datetime={data?.time} />
+                </h2>
               </div>
             </div>
           </div>
