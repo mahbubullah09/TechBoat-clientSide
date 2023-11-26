@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Products = () => {
+
+    const [data,setData] = useState([])
+
+    useEffect(() => {
+        fetch('../../public/fakeData.json')
+        .then(response => response.json())
+   
+ .then(data => setData(data))
+
+    },[setData])
+    console.log(data);
     return (
         <div>
             <h2>products</h2>
@@ -9,6 +20,8 @@ const Products = () => {
                     placeholder="  Search by Tag"/>
                 <button  className="bg-[#0D6EFD] text-white text-sm font-semibold px-4 py-2 rounded">Search</button>
             </div>
+
+
         </div>
     );
 };
