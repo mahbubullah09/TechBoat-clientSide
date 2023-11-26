@@ -1,25 +1,26 @@
 import moment from 'moment';
 import React from 'react';
+import TimeAgo from 'timeago-react';
 
 const ReviewCardStracture = ({data}) => {
     const time = moment(data?.time, "YYYYMMDD").fromNow();
 
     return (
         <div className=' my-8'>
-              <div className="block rounded-lg bg-neutral-700 shadow-black/30">
+              <div className="block rounded-lg bg-neutral-700 ">
                 <div className="h-28 overflow-hidden rounded-t-lg bg-[#9d789b]"></div>
                 <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2  border-neutral-800 bg-neutral-800">
                   <img src={data?.image} />
                 </div>
                 <div className="p-6">
-                  <h4 className="mb-4 text-2xl text-center font-semibold">{data?.user_name}</h4>
-                    <div className='flex justify-between items-center'>
+                  <h4 className="mb-4 text-white text-2xl text-center font-semibold">{data?.user_name}</h4>
+                    <div className='flex text-white  justify-between items-center'>
                         <p>Ratings:{data?.rating}</p>
-                        <p>{time}</p>
+                        <p>  <TimeAgo datetime={data?.time} /></p>
 
                     </div>
                   <hr />
-                  <p className="mt-4">
+                  <p className="mt-4 text-white ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
