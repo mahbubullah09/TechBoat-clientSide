@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useAxiosPublic from '../hooks/usePublic';
+import PDetailsCard from './PDetailsCard';
 
 const ProductDetails = () => {
 const {id} = useParams();
@@ -26,7 +27,7 @@ useEffect(() => {
 console.log(data);
     return (
         <div>
-            <h2>product details comming...</h2>
+          <PDetailsCard data={data}/>
         </div>
     );
 };
