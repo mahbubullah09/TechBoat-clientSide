@@ -11,6 +11,7 @@ import AuthProvider from './Provider/AuthProvider';
 import SingUp from './Authentication/SingUp';
 import Tagtest from './TAGTEST';
 import Products from './Products/Products';
+import ProductDetails from './ProductDetails/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path:'/products',
         element: <Products/>
+      },
+      {
+        path:'/product/:id',
+        element: <ProductDetails/>,
+
       },
     ],
   },
