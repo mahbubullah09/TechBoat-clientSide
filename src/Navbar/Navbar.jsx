@@ -6,6 +6,7 @@ import { useContext } from "react";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+  console.log(user?.photoURL);
 
   const navLink = (
     <div className=" gap-2 flex flex-col lg:flex-row ">
