@@ -67,7 +67,7 @@ const Review = ({data}) => {
               Feedback
             </h2>
             <p className="mb-5 leading-relaxed text-gray-600">
-              If you had any issues or you liked our service, please share with
+              If you had any issues or you liked this tech products, please share with
               us!
             </p>
             <form onSubmit={handleReview} method="dialog">
