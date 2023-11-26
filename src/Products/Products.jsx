@@ -14,7 +14,7 @@ const Products = () => {
     //  .then(data => setData(data))
 
     axiosPublic
-      .get(`/products?search=${search}`)
+      .get(`/products/search?search=${search}`)
       .then((res) => {
         setData(res.data);
       })
