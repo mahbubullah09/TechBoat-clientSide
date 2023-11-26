@@ -27,7 +27,7 @@ const Navbar = () => {
 
       <ul className="py-1 relative group">
         <NavLink
-          to="/product"
+          to="/products"
           className={({ isActive }) =>
             isActive
               ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-2 px-4     "
@@ -35,7 +35,7 @@ const Navbar = () => {
           }
         >
           {" "}
-          Product
+          Products
           <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
           <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
         </NavLink>
