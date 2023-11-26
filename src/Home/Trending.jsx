@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../Products/ProductCard';
+import useAxiosPublic from '../hooks/usePublic';
 
 const Trending = () => {
-    const [data,setData] = useState([])
-    
-
+    const axiosPublic = useAxiosPublic();
+    const [data, setData] = useState([]);
+  
     useEffect(() => {
-        fetch('http://localhost:5000/products')
-        .then(response => response.json())
-   
- .then(data => setData(data))
-
-    },[setData])
+      //         fetch('http://localhost:5000/products')
+      //         .then(response => response.json())
+  
+      //  .then(data => setData(data))
+  
+      axiosPublic
+        .get("/products")
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }, [axiosPublic]);
 
 
     data.sort((a, b) => {
