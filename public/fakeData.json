@@ -1,6 +1,8 @@
 [
   {
-    "image": "https://picsum.photos/200/300?image=1026",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/m9P5Z9d/Untitled.jpg",
     "name": "Phone with Smart AI Assistant", 
     "description": "This phone features an intelligent AI assistant that learns your habits to provide personalized help through natural language processing. It seamlessly integrates into your daily life to enhance every aspect of your mobile experience.",
     "tags": [
@@ -8,12 +10,14 @@
       {"id": "ai", "text": "AI"},
       {"id": "electronics", "text": "Electronics"}
     ],
-    "external_link": "https://example.com/phone1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwin1PT9juGCAxVXhGMGHYXGAtoQFnoECBoQAQ&url=https%3A%2F%2Fbuiltin.com%2Fartificial-intelligence%2Fai-assistant&usg=AOvVaw3EtIxQq-PPtDKLQGniua0C&opi=89978449",
     "vote_count": 35,
     "time": "2023-11-25 17:05:10 am"
   },
   {
-    "image": "https://picsum.photos/200/300?image=856",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/gSp4swn/images.jpg",
     "name": "Wireless Noise-Cancelling Headphones",
     "description": "Experience exceptional audio quality with these Bluetooth headphones featuring active noise cancellation to immerse you completely in your music or calls.",  
     "tags": [
@@ -21,12 +25,14 @@
       {"id": "music", "text": "Music"}, 
       {"id": "electronics", "text": "Electronics"}
     ],
-    "external_link": "https://example.com/headphones1", 
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwip9IOOj-GCAxVf8zgGHcWBAD8QFnoECA0QAQ&url=https%3A%2F%2Fwww.cnet.com%2Ftech%2Fmobile%2Fbest-noise-canceling-headphones%2F&usg=AOvVaw23q71y1vASUMSMNNc6hAdY&opi=89978449", 
     "vote_count": 29,
     "time": "2023-11-24 13:15:03 am"
   },
   {
-    "image": "https://picsum.photos/200/300?image=177",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/TPPpYNX/robotvacuums-2048px-2935.jpg",
     "name": "Smart Robot Vacuum",
     "description": "This app-controlled robot vacuum makes cleaning efficient with customized schedules, selective room cleaning, and advanced navigation.",
     "tags": [
@@ -34,12 +40,14 @@
       {"id": "appliances", "text": "Appliances"},  
       {"id": "electronics", "text": "Electronics"}
     ],
-    "external_link": "https://example.com/vacuum1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiFnraZj-GCAxVjwzgGHTIjCyoQFnoECA0QAQ&url=https%3A%2F%2Fwww.pcmag.com%2Fpicks%2Fthe-best-robot-vacuums&usg=AOvVaw0kzSHt14v_fVAfq8tC30Zk&opi=89978449",
     "vote_count": 20, 
     "time": "2023-11-23 12:30:15 am"
   },
   {
-    "image": "https://picsum.photos/200/300?image=856",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/Jy6sd4D/Untitled.jpg",
     "name": "360 Camera Drone", 
     "description": "Capture stunning aerial panoramic footage in 4K with this easy-to-fly drone featuring collision detection and auto return home.",
     "tags": [
@@ -47,12 +55,14 @@
       {"id": "photography", "text": "Photography"},
       {"id": "electronics", "text": "Electronics"}  
     ],
-    "external_link": "https://example.com/drone1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi918Sjj-GCAxUc1jgGHbAIAJcQFnoECA4QAQ&url=https%3A%2F%2Fwww.insta360.com%2Fproduct%2Finsta360-sphere&usg=AOvVaw1l9IEj9LmAq_THl4HHLxpe&opi=89978449",
     "vote_count": 16,
     "time": "2023-11-22 09:45:06 am"
   },
   {
-    "image": "https://picsum.photos/200/300?image=123",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/XLKmnsq/images.jpg",
     "name": "Fitness Tracker Watch",
     "description": "Stay on top of your health and fitness goals with this stylish smartwatch that tracks heart rate, sleep, activity and more.",
     "tags": [
@@ -60,12 +70,14 @@
       {"id": "health", "text": "Health"},
       {"id": "wearables", "text": "Wearables"}
     ],  
-    "external_link": "https://example.com/watch1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwipqKGtj-GCAxWbxjgGHZgvCPMQFnoECA4QAQ&url=https%3A%2F%2Fwww.theverge.com%2F22985108%2Fbest-fitness-tracker&usg=AOvVaw3LpMFq7vJQSE3atz2NuiZW&opi=89978449",
     "vote_count": 27,
     "time": "2023-11-21 15:20:10 am" 
   },
   {
-    "image": "https://picsum.photos/200/300?image=852",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/8gLBVBw/Untitled.jpg",
     "name": "Smart Display Speaker",
     "description": "Listen to music, podcasts and audiobooks on this WiFi and Bluetooth speaker while accessing your virtual assistant and viewing visual info like calendar events and weather forecasts.",
     "tags": [ 
@@ -73,12 +85,14 @@
       {"id": "home", "text": "Home"},
       {"id": "smart", "text": "Smart"}
     ],
-    "external_link": "https://example.com/speaker1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj6w_W_j-GCAxWFumMGHZE9BPAQFnoECBUQAQ&url=https%3A%2F%2Fwww.pcmag.com%2Fpicks%2Fthe-best-smart-displays&usg=AOvVaw08oQ0D5tRRT53etUvsYdJ7&opi=89978449",
     "vote_count": 11,
     "time": "2023-11-20 19:30:45 am"
   }, 
   {
-    "image": "https://picsum.photos/200/300?image=856",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/Btz83rD/51ods-Yy-URHL-AC-UF1000-1000-QL80.jpg",
     "name": "VR Gaming Headset",  
     "description": "Dive into incredible virtual worlds, play your favorite games in a whole new way and enjoy an immersive media experience with this advanced VR headset.", 
     "tags": [
@@ -86,12 +100,14 @@
       {"id": "vr", "text": "VR"},
       {"id": "electronics", "text": "Electronics"}
     ],
-    "external_link": "https://example.com/headset1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwipg8DLj-GCAxU12TgGHTjNDHcQFnoECA0QAQ&url=https%3A%2F%2Fwww.pcmag.com%2Fpicks%2Fthe-best-vr-headsets&usg=AOvVaw1fdoLVAa3-PAWHhKYc4xmJ&opi=89978449",
     "vote_count": 23,
     "time": "2023-11-19 20:45:17 am"
   },
   {
-    "image": "https://picsum.photos/200/300?image=123", 
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/PGtgSS6/images.jpg", 
     "name": "360 Camera",
     "description": "Capture the full panoramic view in stunning detail with this easy-to-use 360 camera featuring built-in image stabilization.",
     "tags": [ 
@@ -99,25 +115,15 @@
       {"id": "video", "text": "Video"},
       {"id": "electronics", "text": "Electronics"} 
     ],
-    "external_link": "https://example.com/camera1", 
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjXufnyj-GCAxX1yTgGHawbCS0QFnoECBEQAQ&url=https%3A%2F%2Fwww.digitalcameraworld.com%2Fbuying-guides%2Fbest-360-cameras&usg=AOvVaw0t6HOq2qgTUBy3akvPS0M9&opi=89978449", 
     "vote_count": 15, 
     "time": "2023-11-18 11:05:35 am"
-  }, 
-  {
-    "image": "https://picsum.photos/200/300?image=178",
-    "name": "Smart Baby Monitor",  
-    "description": "Keep an eye on your little one with this WiFi baby monitor allowing you to view and listen from your phone, get alerts and access advanced analytics.", 
-    "tags": [
-      {"id": "baby", "text": "Baby"},
-      {"id": "home", "text": "Home"}, 
-      {"id": "smart", "text": "Smart"}
-    ],
-    "external_link": "https://example.com/monitor1",
-    "vote_count": 10,
-    "time": "2023-11-17 14:35:10 am" 
   },
+ 
   {
-    "image": "https://picsum.photos/200/300?image=123",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/zQ8XyFK/images.jpg",
     "name": "Kids Tablet", 
     "description": "Designed just for kids, this durable tablet has parental controls and access to over 20,000 popular books, learning apps, games and videos screened for age-appropriateness.",
     "tags": [
@@ -125,12 +131,14 @@
       {"id": "education", "text": "Education"},
       {"id": "kids", "text": "Kids"}
     ],
-    "external_link": "https://example.com/tablet1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjCj6P-j-GCAxVgxjgGHa20BVQQFnoECA0QAQ&url=https%3A%2F%2Fwww.pcmag.com%2Fpicks%2Fthe-best-baby-monitors&usg=AOvVaw3LnTZIp-QxdLG3CPikMcIl&opi=89978449",
     "vote_count": 12,
-    "time": "2023-11-16 13:20:35 am"
+    "time": "2023-11-16 13:20:35"
   },
   {
-    "image": "https://picsum.photos/200/300?image=178", 
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/MRvJyRt/Untitled.jpg", 
     "name": "Laptop with Stylus",
     "description": "Power through projects on the go with this lightweight laptop featuring a touchscreen display for natural writing and drawing with the pressure-sensitive stylus.",
     "tags": [
@@ -138,12 +146,14 @@
       {"id": "productivity", "text": "Productivity"}, 
       {"id": "electronics", "text": "Electronics"}
     ],
-    "external_link": "https://example.com/laptop1",
+    "external_link": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwimgdHXkOGCAxXeTWwGHVOSDVQQFnoECA0QAQ&url=https%3A%2F%2Ftimesofindia.indiatimes.com%2Fmost-searched-products%2Felectronics%2Flaptops%2Fbest-touchscreen-laptops-that-support-the-digital-pen-stylus-input%2Farticleshow%2F76746532.cms&usg=AOvVaw2pcuAt55FIyQ3M2Lo9Yb5-&opi=89978449",
     "vote_count": 19,
-    "time": "2023-11-15 08:55:20 am"
+    "time": "2023-11-15 08:55:20"
   },
   {
-    "image": "https://picsum.photos/200/300?image=852",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/DDyR91n/mirrorless-cameras-shotkit.jpg",
     "name": "Mirrorless Camera", 
     "description": "Take professional-quality photos and videos without the bulk using this mirrorless digital camera that delivers speedy autofocus and expanded creative options.",
     "tags": [
@@ -151,12 +161,14 @@
       {"id": "photography", "text": "Photography"},
       {"id": "electronics", "text": "Electronics"} 
     ],
-    "external_link": "https://example.com/camera2",
+    "external_link": "https://shotkit.com/best-mirrorless-cameras/",
     "vote_count": 27,
-    "time": "2023-11-14 16:05:35 am"
+    "time": "2023-11-14 16:05:35"
   },
   {
-    "image": "https://picsum.photos/200/300?image=123",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/BfDY2JS/noise-cancelling-headphones-026-64fa29346d2b6.jpg",
     "name": "Noise Cancelling Earbuds",
     "description": "Tune in to exceptional JBL sound without distractions using these Bluetooth earbuds with active noise cancellation and an adaptive listening experience.", 
     "tags": [
@@ -164,12 +176,14 @@
       {"id": "music", "text": "Music"},
       {"id": "wearables", "text": "Wearables"}
     ],
-    "external_link": "https://example.com/earbuds1",
+    "external_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bestproducts.com%2Ftech%2Fgadgets%2Fg170%2Fbest-noise-canceling-headphones%2F&psig=AOvVaw0YxIXP4LMP8OsNEkZo6XQq&ust=1701069918693000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCIim67GR4YIDFQAAAAAdAAAAABAR",
     "vote_count": 32,
-    "time": "2023-11-13 11:45:10 am"
+    "time": "2023-11-13 11:45:10"
   },
   { 
-    "image": "https://picsum.photos/200/300?image=178",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/VgBxH2w/Untitled.jpg",
     "name": "Foldable Smartphone", 
     "description": "Stay productive and entertained anywhere with this sleek foldable touchscreen smartphone featuring stylish design, versatile usage modes and the latest innovative features.",
     "tags": [   
@@ -179,10 +193,12 @@
     ],
     "external_link": "https://example.com/phone2",
     "vote_count": 25,
-    "time": "2023-11-12 09:20:55 am"
+    "time": "2023-11-12 09:20:55"
   },
   {
-    "image": "https://picsum.photos/200/300?image=852", 
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/F7s1MJB/360-F-620732047-o-K7-Opoyx-Bp6qyk15-WYAf1-O5p9-EKabk2g.jpg", 
     "name": "Smart Security Camera",
     "description": "Monitor your home day and night using this full HD indoor/outdoor security camera with intelligent alerts, facial recognition and easy smartphone viewing.",
     "tags": [
@@ -192,10 +208,12 @@
     ], 
     "external_link": "https://example.com/camera3",
     "vote_count": 16, 
-    "time": "2023-11-11 12:35:40 am"
+    "time": "2023-11-11 12:35:40"
   },
   {
-    "image": "https://picsum.photos/200/300?image=1026",
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/P6qTYM4/DSCF2232.jpg",
     "name": "Wireless Earbuds",
     "description": "Experience exceptional sound quality on the go with these Bluetooth earbuds providing up to 24 hours total listening time with the included wireless charging case.",
     "tags": [ 
@@ -205,6 +223,114 @@
     ],
     "external_link": "https://example.com/earbuds2",
     "vote_count": 19,
-    "time": "2023-11-10 15:55:15 am"
-  } 
+    "time": "2023-11-10 15:55:15"
+  },
+  {
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/PwY8c05/Untitled.jpg",
+    "name": "Smart Home Hub",
+    "description": "Transform your living space with the Smart Home Hub. Control lights, thermostat, and security seamlessly with a single device. Its intuitive interface and AI-powered automation make your home smarter and more efficient, offering a glimpse into the future of home technology.",
+    "tag": [
+      {"id": "smart-home", "text": "smart home"},
+      {"id": "ai", "text": "ai"},
+      {"id": "electronics", "text": "electronics"}
+    ],
+    "external_link": "https://www.example.com/smart-home-hub",
+    "vote_count": 35,
+    "time": "2023-11-26 09:15:30 am"
+  },
+  {
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/nDcYYKq/Untitled.jpg",
+    "name": "Next-Gen Gaming Console",
+    "description": "Dive into the future of gaming with the Next-Gen Gaming Console. Unleash stunning graphics, immersive gameplay, and lightning-fast load times. This console redefines entertainment, bringing a new level of excitement to your gaming experience.",
+    "tag": [
+      {"id": "gaming", "text": "gaming"},
+      {"id": "tech", "text": "tech"},
+      {"id": "electronics", "text": "electronics"}
+    ],
+    "external_link": "https://www.example.com/next-gen-gaming-console",
+    "vote_count": 28,
+    "time": "2023-11-26 10:30:45 am"
+  },
+  {
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/PWSff97/gofaimage.jpg",
+    "name": "AI-Powered Fitness Tracker",
+    "description": "Elevate your fitness journey with the AI-Powered Fitness Tracker. This advanced wearable not only monitors your activity and health but also provides personalized workout suggestions based on your fitness goals. Take charge of your well-being with this innovative device.",
+    "tag": [
+      {"id": "wearables", "text": "wearables"},
+      {"id": "ai", "text": "ai"},
+      {"id": "health", "text": "health"}
+    ],
+    "external_link": "https://www.example.com/ai-fitness-tracker",
+    "vote_count": 20,
+    "time": "2023-11-26 11:45:22 am"
+    
+  },
+  { 
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/HKJ0gKj/Untitled.jpg",
+    "name": "Robot Lawn Mower",
+    "description": "Automate lawn care with app control using this robot mower that mulches grass clippings into natural fertilizer while avoiding obstacles and restricted areas for customized yard maintenance.", 
+    "tags": [
+      {"id": "home", "text": "Home"},
+      {"id": "smart", "text": "Smart"},  
+      {"id": "appliances", "text": "Appliances"}
+    ],
+    "external_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2Fwirecutter%2Freviews%2Fbest-robot-lawn-mower%2F&psig=AOvVaw2fCT701JTquZgA8EXWcmW0&ust=1701070151579000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCNjohKGS4YIDFQAAAAAdAAAAABAE",
+    "vote_count": 8,
+    "time": "2023-11-22 12:05:10" 
+  },
+  {
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/ykv5YDt/q800t-02-550x550w.jpg",
+    "name": "8K TV with Alexa",  
+    "description": "Experience your favorite movies, shows and games in incredible detail on this 75-inch 8K smart TV with built-in Alexa voice control and support for the latest display technologies.",
+    "tags": [   
+      {"id": "tv", "text": "TV"},
+      {"id": "home", "text": "Home"},  
+      {"id": "smart", "text": "Smart"}
+    ],
+    "external_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgreentech.com.bd%2Fsamsung-65q800t-65-inch-8k-qled-smart-tv-with-alexa-built-in&psig=AOvVaw012yU7Go8vUKQ6efItxtIS&ust=1701070222206000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCLCeycKS4YIDFQAAAAAdAAAAABAQ", 
+    "vote_count": 17,
+    "time": "2023-11-24 18:30:55"
+  },
+  {
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/VgVc0gG/Untitled.jpg", 
+    "name": "Smart Doorbell Camera",
+    "description": "Protect your entryway 24/7 using this full HD video doorbell featuring motion alerts, two-way audio and enhanced night vision to capture faces and packages clearly.",   
+    "tags": [
+      {"id": "security", "text": "Security"},
+      {"id": "home", "text": "Home"},
+      {"id": "smart", "text": "Smart"}
+    ],
+    "external_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.popularmechanics.com%2Ftechnology%2Fgadgets%2Fa27271615%2Fbest-doorbell-camera%2F&psig=AOvVaw3SNJtO6a_keE22Mt-Cvavz&ust=1701070302857000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCLDqjumS4YIDFQAAAAAdAAAAABAJ",
+    "vote_count": 14,
+    "time": "2023-11-25 10:35:55" 
+  },
+  {
+    "status":"accepted",
+    "email": "abc@gmail.com",
+    "image": "https://i.ibb.co/93ny75s/Untitled.jpg",
+    "name": "AI Robot Assistant",
+    "description": "Life is easier with your own personal AI-powered robot assistant featuring voice and facial recognition to perform helpful tasks like setting reminders, controlling smart devices, answering questions and more.",
+    "tags": [ 
+      {"id": "ai", "text": "AI"},
+      {"id": "robotics", "text": "Robotics"},
+      {"id": "smart", "text": "Smart"}
+    ],  
+    "external_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fprovenrobotics.ai%2Ftransform-your-daily-life-with-these-assistant-robots%2F&psig=AOvVaw18BH0_chdByU-2eIjOJDlE&ust=1701070354741000&source=images&cd=vfe&opi=89978449&ved=0CBQQjhxqFwoTCOD64oGT4YIDFQAAAAAdAAAAABAE",
+    "vote_count": 9,
+    "time": "2023-11-26 13:45:35"
+  }
+
+ 
 ]
