@@ -21,7 +21,7 @@ const ReviewCard = ({id}) => {
   const axiosPublic = useAxiosPublic();
     console.log(id);
     const [reviewed, setReviewed] = useState([]);
-  const reviewUrl = `http://localhost:5000/review/products?gadget_id=${id}`;
+ 
 
   useEffect(() => {
     // //    axios.get(url, {withCredentials:true})
