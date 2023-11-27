@@ -1,12 +1,48 @@
-
 import { Link } from "react-router-dom";
 import Tags from "../Products/Tag";
 import Vote from "../Products/Vote";
 import Review from "./Review";
-
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const PDetailsCard = ({ data }) => {
- 
+  console.log(data);
+  const { user } = useContext(AuthContext);
+  const user_mail = user?.email;
+
+  const id = data?._id;
+
+  const handleReport = () => {
+    let addReport = {
+      product_id: id,
+      user_mail,
+    };
+    console.log(addReport);
+
+    fetch("http://localhost:5000/reports", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addReport),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+
+        if (data?.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Report has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
   return (
     <div>
       <section className="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,18 +61,18 @@ const PDetailsCard = ({ data }) => {
             <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                 <Link to={data?.external_link}>
-                  <p className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
+                  <button className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
                     External Link
-                  </p>
+                  </button>
                 </Link>
               </div>
               <div className="mt-3 sm:mt-0 sm:ml-3">
-                <a
-                  href="#"
+                <button
+                  onClick={handleReport}
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
                 >
                   Report this
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -59,9 +95,7 @@ const PDetailsCard = ({ data }) => {
       <div className="my-8">
         <hr />
 
-        <Review data={data}/>
-
-        
+        <Review data={data} />
       </div>
     </div>
   );
