@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
@@ -46,12 +46,15 @@ const UserSlidebar = () => {
                 Add Products
               </p>
               </Link>
-              <a className="inline-block text-gray-600 hover:text-black my-4 w-full">
+             <Link to={'myproduct'}>
+             
+             <p className="inline-block text-gray-600 hover:text-black my-4 w-full">
                 <span className="material-icons-outlined float-left pr-2">
                   view_cozy
                 </span>
                 My Products
-              </a>
+              </p>
+             </Link>
             </div>
 
             <div className="bg-orange-200 rounded-xl shadow-lg mb-6 px-6 py-4">

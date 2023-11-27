@@ -1,11 +1,11 @@
-import React from "react";
+
 import Baner from "./Baner";
 import moment from "moment/moment";
-import * as timeago from "timeago.js";
+
 import TimeAgo from "timeago-react";
 
 // import it first.
-import vi from "timeago.js/lib/lang/vi";
+
 import Trending from "./Trending";
 
 const Home = () => {
