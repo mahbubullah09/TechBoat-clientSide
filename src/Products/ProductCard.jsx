@@ -11,7 +11,7 @@ const ProductCard = ({ data }) => {
   const { user } = useContext(AuthContext);
   return (
     <div>
-      <Link to={`/product/${data?._id}`}>
+      
         <div className="antialiased text-gray-900 ">
           <div className="bg-gray-200   flex items-center justify-center">
             <div className="bg-white rounded-lg overflow-hidden shadow-2xl ">
@@ -31,8 +31,17 @@ const ProductCard = ({ data }) => {
                   {data?.name}
                 </h4>
 
+                <div className="flex items-center justify-between">
                 <div>
                     <Vote data={data}/>
+                </div>
+                <div>
+                <Link to={`/product/${data?._id}`}>
+                <button className="bg-[#0D6EFD] text-white text-sm font-semibold px-4 py-2 rounded">
+          Details
+        </button>
+                </Link>
+                </div>
                 </div>
 
                 
@@ -45,7 +54,7 @@ const ProductCard = ({ data }) => {
             </div>
           </div>
         </div>
-      </Link>
+      
     </div>
   );
 };
