@@ -5,14 +5,9 @@ import { render } from 'react-dom';
 import './style/tagStyle.css';
 import { WithContext as ReactTags } from 'react-tag-input';
 
-const emni = [
-    { id:'mobile', text: 'mobile' },
-    { id: 'ai', text: 'ai'},
-    { id: 'electronics', text: 'electronics' },
-      
-  ]
+
   
-  console.log(emni);
+
 
 const KeyCodes = {
   comma: 188,
@@ -22,9 +17,9 @@ const KeyCodes = {
 const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 
-const Tagtest = () => {
+const Tagtest = ({tags , setTags}) => {
 
-    const [tags, setTags] = React.useState([]);
+    
     console.log(tags);
 
     const handleDelete = (i) => {
@@ -52,7 +47,7 @@ const Tagtest = () => {
 
     return (
         <div className="app">
-      <h1> React Tags Example </h1>
+      
       <div>
         <ReactTags
           tags={tags}
@@ -62,16 +57,12 @@ const Tagtest = () => {
           handleAddition={handleAddition}
           handleDrag={handleDrag}
           handleTagClick={handleTagClick}
-          inputFieldPosition="bottom"
+          inputFieldPosition="top"
           autocomplete
           editable
         />
 
-      <div className='grid grid-cols-4 max-w-xl mx-auto'>
-      {
-            tags.map((data) => <div key={data}> <h4>{data?.text}</h4></div>) 
-        }
-      </div>
+      
       </div>
     </div>
     );

@@ -6,8 +6,12 @@ import { useForm } from "react-hook-form";
 
 import Tagtest from "../TAGTEST";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import moment from "moment";
 
 const AddProduct = () => {
+    const time = moment().format("YYYY-MM-DD h:mm:ss a");
+    const [tags, setTags] = useState([]);
   const { user } = useContext(AuthContext);
   const OwnerName = user?.displayName;
   const OwnerEmail = user?.email;
@@ -18,21 +22,50 @@ const AddProduct = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const [tags, setTags] = useState([]);
+  
+  console.log(tags);
+  const status = 'pending'
   const onSubmit = async (data) => {
     const { name, photoURL, externalLink, description } = data;
     const productInfo = {
       name,
-      photoURL,
-      externalLink,
-      description,
+      image: photoURL,
+      external_link: externalLink,
+      description: description,
       tags,
       OwnerName,
-      OwnerEmail,
+      email: OwnerEmail,
       OwnerImage,
+      status,
+      time
     };
     console.log(productInfo);
     reset();
+
+    fetch("http://localhost:5000/products", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(productInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+
+          if (data.insertedId) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Products added successfully",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+
+
+
   };
   return (
     <div>
@@ -40,76 +73,76 @@ const AddProduct = () => {
         <title>Dashboard | AddProduct</title>
       </Helmet> */}
       <h3 className="text-4xl font-playfair font-bold text-center mt-8">
-        Add Your Product
+        Add  New Product
       </h3>
 
       <div>
         <div className="bg-white mx-10 px-5 py-4 rounded">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex gap-6 my-6">
-              {/*Owner name */}
+              
               <div className="form-control w-full ">
                 <label className="label">
-                  <span className="label-text">Owner name</span>
+                  <span className="label-text">Owner name <span className="text-red-600 text-lg">*</span></span>
                 </label>
                 <input
                   type="text"
                   defaultValue={OwnerName}
                   disabled
-                  className="input input-bordered w-full "
+                  className="h-10 border p-2 w-full "
                 />
               </div>
-              {/* Owner Email */}
+             
               <div className="form-control w-full ">
                 <label className="label">
-                  <span className="label-text">Owner Email*</span>
+                  <span className="label-text">Owner Email <span className="text-red-600 text-lg">*</span></span>
                 </label>
                 <input
                   type="text"
                   defaultValue={OwnerEmail}
                   disabled
-                  className="input input-bordered w-full "
+                  className="h-10 border p-2 w-full "
                 />
               </div>
             </div>
-            {/* Owner image */}
+           
             <div className="form-control w-full ">
               <label className="label">
-                <span className="label-text">Owner Image*</span>
+                <span className="label-text">Owner Image <span className="text-red-600 text-lg">*</span></span>
               </label>
               <input
                 type="text"
                 defaultValue={OwnerImage}
                 disabled
-                className="input input-bordered w-full "
+                className="h-10 border p-2 w-full "
               />
             </div>
             <div className="flex gap-6 my-6">
-              {/* name */}
+              
               <div className="form-control w-full ">
                 <label className="label">
-                  <span className="label-text">Product name*</span>
+                  <span className="label-text">Product name <span className="text-red-600 text-lg">*</span></span>
                 </label>
                 <input
                   type="text"
                   placeholder="Product name"
                   {...register("name", { required: true })}
-                  className="input input-bordered w-full "
+                  className="h-10 border p-2 w-full "
                 />
                 {errors.name && (
                   <span className="text-red-600">Name is required</span>
                 )}
               </div>
-              {/* image */}
+              
               <div className="form-control w-full ">
                 <label className="label">
-                  <span className="label-text">Product Image*</span>
+                  <span className="label-text">Product Image <span className="text-red-600 text-lg">*</span></span>
                 </label>
                 <input
                   type="text"
                   placeholder="Product PhotoURL"
                   {...register("photoURL", { required: true })}
-                  className="input input-bordered w-full "
+                  className="h-10 border p-2  w-full "
                 />
                 {errors.photoURL && (
                   <span className="text-red-600">
@@ -119,17 +152,17 @@ const AddProduct = () => {
               </div>
             </div>
             <div className="flex gap-6 my-6">
-              {/* Tags */}
+              
               <div className="form-control w-full ">
                 <label className="label">
-                  <span className="label-text">Tags</span>
+                  <span className="label-text">Tags <span className="text-red-600 text-lg">*</span></span>
                 </label>
                 <Tagtest tags={tags} setTags={setTags} />
               </div>
-              {/* External Link */}
+              
               <div className="form-control w-full ">
                 <label className="label">
-                  <span className="label-text">External Link*</span>
+                  <span className="label-text">External Link <span className="text-red-600 text-lg">*</span></span>
                 </label>
                 <input
                   type="text"
@@ -137,7 +170,7 @@ const AddProduct = () => {
                   {...register("externalLink", {
                     required: true,
                   })}
-                  className="input input-bordered w-full "
+                  className="h-10 border p-2 w-full "
                 />
                 {errors.externalLink && (
                   <span className="text-red-600">
@@ -148,7 +181,7 @@ const AddProduct = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Product Description*</span>
+                <span className="label-text">Product Description <span className="text-red-600 text-lg">*</span></span>
               </label>
               <textarea
                 {...register("description", {
@@ -175,8 +208,8 @@ const AddProduct = () => {
             </div>
 
             <div className="flex justify-center mt-6">
-              <button className="btn bg-gradient-to-r from-[#835D23] to-[#E76F51] text-white text-lg">
-                Submit <BsDatabaseFillAdd />
+              <button className=" rounded-lg px-4 py-2 bg-[#0D6EFD] text-white text-lg">
+                Submit 
               </button>
             </div>
           </form>
