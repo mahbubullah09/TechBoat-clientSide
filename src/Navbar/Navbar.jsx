@@ -114,6 +114,22 @@ const Navbar = () => {
                     <p className="w-52">{user?.email}</p>
                   </div>
                   <div>
+                  <NavLink
+          to="dashboard/userDash"
+          className={({ isActive }) =>
+            isActive
+              ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
+              : " font-normal text-base  py-2 px-4  "
+          }
+        >
+          {" "}
+          User DashBoard
+          <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+          <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+        </NavLink>
+      
+                  </div>
+                  <div>
                     <div>
                       <button
                         className="  text-sm md:text-base font-semibold hover:bg-[#e9c836] hover:text-black bg-[#ffcf00]  text-black py-1 px-2 md:py-2 md:px-4 rounded-md hover:bg-blue-gray-800"

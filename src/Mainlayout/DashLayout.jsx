@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 const DashLayout = () => {
     return (
         <div>
-            <h3>DashBoard</h3>
+            
             <Outlet/>
             <Toaster/>
             
