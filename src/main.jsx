@@ -14,7 +14,9 @@ import Products from './Products/Products';
 import ProductDetails from './ProductDetails/ProductDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import DashLayout from './Mainlayout/DashLayout';
-import UserDash from './Dashboard/UserDash';
+// import UserDash from './Dashboard/UserDash';
+import UserSlidebar from './Dashboard/UserDash';
+import AddProduct from './Dashboard/AddProduts';
 
 const router = createBrowserRouter([
   {
@@ -51,12 +53,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "dashboard",
+    path: "userdashboard",
     element: <DashLayout/>,
     children: [
       {
-        path: "userDash",
-        element: <UserDash/>,
+        path: "addproduct",
+        element: <AddProduct/>,
       },
      
     ],

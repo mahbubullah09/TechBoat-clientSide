@@ -115,7 +115,7 @@ const Navbar = () => {
                   </div>
                   <div>
                   <NavLink
-          to="dashboard/userDash"
+          to="userdashboard"
           className={({ isActive }) =>
             isActive
               ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
