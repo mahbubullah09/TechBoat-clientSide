@@ -12,6 +12,9 @@ import SingUp from './Authentication/SingUp';
 import Tagtest from './TAGTEST';
 import Products from './Products/Products';
 import ProductDetails from './ProductDetails/ProductDetails';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import DashLayout from './Mainlayout/DashLayout';
+import UserDash from './Dashboard/UserDash';
 
 const router = createBrowserRouter([
   {
@@ -40,9 +43,22 @@ const router = createBrowserRouter([
       },
       {
         path:'/product/:id',
-        element: <ProductDetails/>,
+        element: <PrivateRoute>
+          <ProductDetails/>
+        </PrivateRoute>,
 
       },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <DashLayout/>,
+    children: [
+      {
+        path: "userDash",
+        element: <UserDash/>,
+      },
+     
     ],
   },
 ]);

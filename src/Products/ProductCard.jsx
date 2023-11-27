@@ -27,20 +27,19 @@ const ProductCard = ({ data }) => {
                     <Tags key={i} tag={data} />
                   ))}
                 </div>
+                <Link to={`/product/${data?._id}`}>
                 <h4 className="mt-2 font-semibold text-lg leading-tight truncate">
                   {data?.name}
                 </h4>
 
+                </Link>
                 <div className="flex items-center justify-between">
                 <div>
                     <Vote data={data}/>
                 </div>
                 <div>
-                <Link to={`/product/${data?._id}`}>
-                <button className="bg-[#0D6EFD] text-white text-sm font-semibold px-4 py-2 rounded">
-          Details
-        </button>
-                </Link>
+                
+             
                 </div>
                 </div>
 
