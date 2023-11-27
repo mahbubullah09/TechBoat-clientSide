@@ -55,7 +55,7 @@ const ProductRow = ({ products, handleDelete, handleUpdate }) => {
 
      
         <th className="flex flex-col gap-2">
-          <Link to={`/updateBookings/${products?._id}`}>
+          <Link to={`updateproduct/${products?._id}`}>
             <button className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
               Update
             </button>

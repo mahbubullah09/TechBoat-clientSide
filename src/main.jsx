@@ -18,6 +18,7 @@ import DashLayout from './Mainlayout/DashLayout';
 import UserSlidebar from './Dashboard/UserDash';
 import AddProduct from './Dashboard/AddProduts';
 import MyProducts from './Dashboard/MyProducts/MyProducts';
+import UpdateProduct from './Dashboard/MyProducts/UpdateProduct';
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,13 @@ const router = createBrowserRouter([
       {
         path: "myproduct",
         element: <MyProducts/>,
+      },
+      {
+        path: 'myproduct/updateproduct/:id',
+        element:
+          <UpdateProduct/>,
+        
+         loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
       },
      
     ],
