@@ -97,6 +97,13 @@ const router = createBrowserRouter([
         path: "reports",
         element: <Reported/>,
       },
+      {
+        path:'productreview/product/:id',
+        element: <PrivateRoute>
+          <ProductDetails/>
+        </PrivateRoute>,
+
+      },
    
      
     ],

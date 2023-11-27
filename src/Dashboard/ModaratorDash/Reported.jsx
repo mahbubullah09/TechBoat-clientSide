@@ -85,6 +85,7 @@ const Reported = () => {
       confirmButtonText: "Yes, Keep it!",
     }).then((result) => {
         if (result.isConfirmed) {
+            console.log('keep');
             fetch(`http://localhost:5000/reports/${id}`, {
               method: "DELETE",
             })
