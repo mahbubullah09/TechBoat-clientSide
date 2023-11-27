@@ -29,12 +29,15 @@ const UserSlidebar = () => {
 
 <div  className="w-48 mx-6 mt-2 " >
 <div className=" rounded-xl shadow-lg mb-6 px-6 py-4 bg-orange-200  ">
+              <Link to={'myprofile'}>
               <p className="inline-block text-gray-600 hover:text-black my-4 w-full">
                 <span className="material-icons-outlined float-left pr-2">
                   face
                 </span>
                 My Profile
-              </p>
+              </p> 
+              
+              </Link>
 
               <Link to={'addproduct'}>
               

@@ -19,6 +19,7 @@ import UserSlidebar from './Dashboard/UserDash';
 import AddProduct from './Dashboard/AddProduts';
 import MyProducts from './Dashboard/MyProducts/MyProducts';
 import UpdateProduct from './Dashboard/MyProducts/UpdateProduct';
+import MyProfile from './Dashboard/MyProfile';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "myproduct",
         element: <MyProducts/>,
+      },
+      {
+        path: "myprofile",
+        element: <MyProfile/>,
       },
       {
         path: 'myproduct/updateproduct/:id',
