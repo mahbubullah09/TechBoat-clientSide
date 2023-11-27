@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BiDownvote, BiSolidUpvote, BiUpvote } from "react-icons/bi";
+import { BiDownvote, BiSolidDownvote, BiSolidUpvote, BiUpvote } from "react-icons/bi";
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../hooks/usePublic';
@@ -11,9 +11,9 @@ const Vote = ({data}) => {
     const id = data?._id;
 
     const axiosPublic = useAxiosPublic();
-    console.log(id);
+
     const [UV, setUV] = useState([]);
-    console.log(UV);
+  
  
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Vote = ({data}) => {
 
 
   const [Voted, setVoted] = useState([]);
-  // const url = `https://roomjet-server-side.vercel.app/Voted/email?email=${email}`;
+
 
   useEffect(() => {
     axiosPublic.get(`/upvotes/email?email=${user_mail}`)
@@ -52,7 +52,7 @@ const Vote = ({data}) => {
     //   .then((res) => res.json())
     //   .then((data) => setVoted(data));
   }, [axiosPublic,user_mail]);
-  console.log(Voted);
+ 
 
   //filter
 
@@ -63,7 +63,62 @@ const Vote = ({data}) => {
     setIsVoted(findVoted);
   }, [id, Voted]);
 
-  console.log(IsVoted);
+
+
+  //downvote
+
+  const [DV, setDV] = useState([]);
+ 
+
+
+useEffect(() => {
+  // //    axios.get(url, {withCredentials:true})
+  // //    .then(res => {
+  // //     setBookings(res.data)
+  // //    })
+
+  // fetch(`http://localhost:5000/`)
+  //   .then((res) => res.json())
+  //   .then((data) => setDV(data));
+
+    axiosPublic.get(`/downvotes/products?product_id=${id}`)
+    .then((res) => {
+      setDV(res.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}, [id,axiosPublic]);
+
+
+
+const [DownVoted, setDownVoted] = useState([]);
+
+
+useEffect(() => {
+  axiosPublic.get(`/downvotes/email?email=${user_mail}`)
+  .then((res) => {
+    setDownVoted(res.data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+  // fetch(url)
+  //   .then((res) => res.json())
+  //   .then((data) => setDownVoted(data));
+}, [axiosPublic,user_mail]);
+
+
+//filter
+
+const [IsDownVoted, setIsDownVoted] = useState();
+
+useEffect(() => {
+  const findDownVoted = DownVoted?.find((data) => data?.product_id === id);
+  setIsDownVoted(findDownVoted);
+}, [id, DownVoted]);
+
+
    
 
     const handleUp = () => {
@@ -136,41 +191,51 @@ const Vote = ({data}) => {
         <div>
             <div className="mt-1 flex items-center gap-2 text-lg">
                   <div className="flex items-center gap-1">
-                    {
-                      !IsVoted?
-                      <div>
+                   
+                     
                     {user ? (
-                      <button onClick={handleUp} className="text-xl">
-                        <BiUpvote />
-                      </button>
+                      <div>
+                        {!IsVoted?
+                          <button onClick={handleUp} className="text-xl">
+                          <BiUpvote />
+                        </button>
+                        :
+                        <p className="text-xl">
+                        <BiSolidUpvote />
+                      </p>
+                        }
+                      </div>
                     ) : (
                       <p className="text-xl">
                         <BiUpvote />
                       </p>
                     )}
-                    </div>
-                    :
-                    <p className="text-xl">
-                        <BiSolidUpvote /> 
-                      </p>
-
-                    }
-
+                    
                     <h2> {UV?.length}</h2>
                   </div>
 
                   <div className="flex items-center gap-1">
-                    {user ? (
-                      <button onClick={handleDown} className="text-xl">
-                        <BiDownvote />{" "}
-                      </button>
+                   <div>
+                   {user ? (
+                     <div>
+                      {!IsDownVoted?
+                         <button onClick={handleDown} className="text-xl">
+                         <BiDownvote />{" "}
+                       </button>
+                       :
+                       <p className="text-xl">
+                        <BiSolidDownvote />
+                      </p>
+                      }
+                     </div>
                     ) : (
                       <p className="text-xl">
                         <BiDownvote />{" "}
                       </p>
                     )}
+                   </div>
 
-                    <h2> {data?.dvote_count}</h2>
+                    <h2> {DV?.length}</h2>
                   </div>
                 </div>
             
