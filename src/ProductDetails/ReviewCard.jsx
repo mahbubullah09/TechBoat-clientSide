@@ -14,23 +14,33 @@ import {
   Navigation,
 } from "swiper/modules";
 import ReviewCardStracture from "./ReviewCardStracture";
+import useAxiosPublic from "../hooks/usePublic";
 
 
 const ReviewCard = ({id}) => {
+  const axiosPublic = useAxiosPublic();
     console.log(id);
     const [reviewed, setReviewed] = useState([]);
   const reviewUrl = `http://localhost:5000/review/products?gadget_id=${id}`;
 
   useEffect(() => {
-    //    axios.get(url, {withCredentials:true})
-    //    .then(res => {
-    //     setBookings(res.data)
-    //    })
+    // //    axios.get(url, {withCredentials:true})
+    // //    .then(res => {
+    // //     setBookings(res.data)
+    // //    })
 
-    fetch(`http://localhost:5000/review/products?gadget_id=${id}`)
-      .then((res) => res.json())
-      .then((data) => setReviewed(data));
-  }, [id]);
+    // fetch(`http://localhost:5000/`)
+    //   .then((res) => res.json())
+    //   .then((data) => setReviewed(data));
+
+      axiosPublic.get(`/review/products?gadget_id=${id}`)
+      .then((res) => {
+        setReviewed(res.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [id,axiosPublic]);
   console.log(reviewed);
     return (
         <div className=" grid place-content-center">
