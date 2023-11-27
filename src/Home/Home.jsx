@@ -40,7 +40,7 @@ const Home = () => {
 
       <Trending/>
 
-      <TimeAgo datetime={"2023-11-25 4:17:31 pm"} />
+   
     </div>
   );
 };

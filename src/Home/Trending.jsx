@@ -1,6 +1,7 @@
 import  { useEffect, useState } from 'react';
 import ProductCard from '../Products/ProductCard';
 import useAxiosPublic from '../hooks/usePublic';
+import { Link } from 'react-router-dom';
 
 const Trending = () => {
     const axiosPublic = useAxiosPublic();
@@ -44,6 +45,14 @@ const Trending = () => {
                     data.slice(0,6).map((data, i) => <ProductCard key={i} data={data}/>)
                 }
 
+            </div>
+            <div className='grid place-content-center'>
+            <Link to={`/products`}>
+            <button className="bg-[#0D6EFD] text-white text-sm font-semibold px-4 py-2 rounded">
+          See All
+        </button>
+
+            </Link>
             </div>
 
             
