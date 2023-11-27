@@ -12,9 +12,11 @@ const PDetailsCard = ({ data }) => {
   const user_mail = user?.email;
 
   const id = data?._id;
+  const name = data?.name
 
   const handleReport = () => {
     let addReport = {
+      name,
       product_id: id,
       user_mail,
     };

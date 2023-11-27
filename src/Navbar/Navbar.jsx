@@ -128,6 +128,20 @@ const Navbar = () => {
           <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
         </NavLink>
       
+                  <NavLink
+          to="moddashboard"
+          className={({ isActive }) =>
+            isActive
+              ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
+              : " font-normal text-base  py-2 px-4  "
+          }
+        >
+          {" "}
+          ModDashBoard
+          <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+          <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+        </NavLink>
+      
                   </div>
                   <div>
                     <div>

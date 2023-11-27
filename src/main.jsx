@@ -20,6 +20,9 @@ import AddProduct from './Dashboard/AddProduts';
 import MyProducts from './Dashboard/MyProducts/MyProducts';
 import UpdateProduct from './Dashboard/MyProducts/UpdateProduct';
 import MyProfile from './Dashboard/MyProfile';
+import ModDash from './Mainlayout/ModDash';
+import Reported from './Dashboard/ModaratorDash/Reported';
+import ModReview from './Dashboard/ModaratorDash/ModReview';
 
 const router = createBrowserRouter([
   {
@@ -78,6 +81,23 @@ const router = createBrowserRouter([
         
          loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
       },
+     
+    ],
+  },
+  {
+    path: "moddashboard",
+    element: <ModDash/>,
+    children: [
+      {
+        path: "productreview",
+        element: <ModReview/>,
+      },
+   
+      {
+        path: "reports",
+        element: <Reported/>,
+      },
+   
      
     ],
   },
