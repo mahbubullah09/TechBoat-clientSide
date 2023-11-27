@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BiDownvote, BiUpvote } from "react-icons/bi";
+import { BiDownvote, BiSolidUpvote, BiUpvote } from "react-icons/bi";
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../hooks/usePublic';
@@ -34,6 +34,36 @@ const Vote = ({data}) => {
         console.error(error);
       });
   }, [id,axiosPublic]);
+
+
+
+  const [Voted, setVoted] = useState([]);
+  // const url = `https://roomjet-server-side.vercel.app/Voted/email?email=${email}`;
+
+  useEffect(() => {
+    axiosPublic.get(`/upvotes/email?email=${user_mail}`)
+    .then((res) => {
+      setVoted(res.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => setVoted(data));
+  }, [axiosPublic,user_mail]);
+  console.log(Voted);
+
+  //filter
+
+  const [IsVoted, setIsVoted] = useState();
+
+  useEffect(() => {
+    const findVoted = Voted?.find((data) => data?.product_id === id);
+    setIsVoted(findVoted);
+  }, [id, Voted]);
+
+  console.log(IsVoted);
    
 
     const handleUp = () => {
@@ -106,6 +136,9 @@ const Vote = ({data}) => {
         <div>
             <div className="mt-1 flex items-center gap-2 text-lg">
                   <div className="flex items-center gap-1">
+                    {
+                      !IsVoted?
+                      <div>
                     {user ? (
                       <button onClick={handleUp} className="text-xl">
                         <BiUpvote />
@@ -115,6 +148,13 @@ const Vote = ({data}) => {
                         <BiUpvote />
                       </p>
                     )}
+                    </div>
+                    :
+                    <p className="text-xl">
+                        <BiSolidUpvote /> 
+                      </p>
+
+                    }
 
                     <h2> {UV?.length}</h2>
                   </div>
