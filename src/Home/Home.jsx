@@ -7,6 +7,7 @@ import TimeAgo from "timeago-react";
 // import it first.
 
 import Trending from "./Trending";
+import Feature from "./Feature";
 
 const Home = () => {
   const data = [
@@ -37,6 +38,7 @@ const Home = () => {
   return (
     <div className="max-w-6xl mx-auto my-2">
       <Baner />
+      <Feature/>
 
       <Trending/>
 
