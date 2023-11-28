@@ -3,23 +3,17 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../hooks/usePublic";
+import useAxiosPublic from "../../../hooks/usePublic";
 
-const ProductsRow = ({ products, handleDelete }) => {
+const CouponRow = ({ products, handleDelete }) => {
   const Stime = moment().format("YYYY-MM-DD h:mm:ss a");
   
   const {
     _id,
-    description,
-    email,
-    external_link,
-    image,
-    name,
-    status,
-    tags,
-    time,
-    OwnerName,
-    OwnerImage
+    code,
+    date,
+    discription,
+    discount
    
   } = products;
 
@@ -134,48 +128,44 @@ const ProductsRow = ({ products, handleDelete }) => {
   return (
     <tr>
       <td>
-        <div className="  space-x-3">{products?.name}</div>
+        <div className="  space-x-3">{products?.code}</div>
       </td>
-      <th>{products?.status}</th>
+      
       <th>
-        {products?.status === "pending" ? (
+   
           <div className="flex flex-col gap-2">
-            
-              <button onClick={() => handleUpdate(products?._id)} className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
-                Accept
-              </button>
-           
-
-            <button
-              onClick={() => handleDelete(products?._id)}
-              className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
-            >
-              Reject
-            </button>
-          </div>
-        ) : (
-          <p>added</p>
-        )}
-      </th>
-
-      <th>
-        <div className="flex flex-col gap-2">
           <Link to={`product/${products?._id}`}>
             <button className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
               Details
             </button>
           </Link>
+            
+             
+           
 
-          <button
-            onClick={handleFeature}
-            className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
-          >
-            Feature
-          </button>
+           
+          </div>
+        
+      </th>
+
+      <th>
+        <div className="flex flex-col gap-2">
+        <button
+              onClick={() => handleDelete(products?._id)}
+              className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
+            >
+              Delete
+            </button>
+        
+
+          <button onClick={() => handleUpdate(products?._id)} className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
+               Update
+              </button>
+         
         </div>
       </th>
     </tr>
   );
 };
 
-export default ProductsRow;
+export default CouponRow;
