@@ -53,6 +53,8 @@ const ModReview = () => {
     });
   };
 
+
+
   return (
     <div>
       {/* <Helmet>
@@ -78,6 +80,7 @@ const ModReview = () => {
                 key={products._id}
                 products={products}
                 handleDelete={handleDelete}
+                // handleUpdate ={handleUpdate}
                 
               />
             ))}

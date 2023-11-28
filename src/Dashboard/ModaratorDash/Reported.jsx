@@ -75,9 +75,6 @@ const Reported = () => {
 
             //delete products
 
-
-
-
             fetch(`http://localhost:5000/products/${id}`, {
               method: "DELETE",
             })

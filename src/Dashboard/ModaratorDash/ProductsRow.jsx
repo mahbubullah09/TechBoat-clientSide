@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import useAxiosPublic from "../../hooks/usePublic";
 import Swal from "sweetalert2";
 
-const ProductsRow = ({ products, handleDelete, handleUpdate }) => {
-  const time = moment().format("YYYY-MM-DD h:mm:ss a");
+const ProductsRow = ({ products, handleDelete }) => {
+  const Stime = moment().format("YYYY-MM-DD h:mm:ss a");
   
   const {
     _id,
@@ -16,6 +16,9 @@ const ProductsRow = ({ products, handleDelete, handleUpdate }) => {
     name,
     status,
     tags,
+    time,
+    OwnerName,
+    OwnerImage
    
   } = products;
 
@@ -57,7 +60,7 @@ const ProductsRow = ({ products, handleDelete, handleUpdate }) => {
     name,
     status,
     tags,
-    time,
+    time :Stime,
     }
     console.log(feature);
 
@@ -84,6 +87,48 @@ const ProductsRow = ({ products, handleDelete, handleUpdate }) => {
           }
         });
   };
+  const NStatus = 'accepted'
+
+  const handleUpdate = (id) =>{
+    console.log(id);
+
+    const productInfo = {
+      name,
+      image,
+      external_link,
+      description,
+      tags,
+      OwnerName,
+      email,
+      OwnerImage,
+      status: NStatus ,
+      time
+    };
+    console.log(productInfo);
+   
+
+    fetch(`http://localhost:5000/products/${id}`, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(productInfo),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+
+          if (data.modifiedCount > 0) {
+            Swal.fire({
+              icon: "success",
+              title: "Congaratulations",
+              text: "Product Updated succesfully!",
+            });
+          }
+        });
+
+
+  }
 
   return (
     <tr>
@@ -94,11 +139,11 @@ const ProductsRow = ({ products, handleDelete, handleUpdate }) => {
       <th>
         {products?.status === "pending" ? (
           <div className="flex flex-col gap-2">
-            <Link to={`updateproduct/${products?._id}`}>
-              <button className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
+            
+              <button onClick={() => handleUpdate(products?._id)} className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
                 Accept
               </button>
-            </Link>
+           
 
             <button
               onClick={() => handleDelete(products?._id)}
