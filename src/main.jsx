@@ -24,6 +24,9 @@ import ModDash from './Mainlayout/ModDash';
 import Reported from './Dashboard/ModaratorDash/Reported';
 import ModReview from './Dashboard/ModaratorDash/ModReview';
 import AdminDash from './Mainlayout/AdminDash';
+import Statistics from './Dashboard/Admin/Statistics';
+import ManageUsers from './Dashboard/Admin/ManageUsers';
+import ManageCoupons from './Dashboard/Admin/ManageCoupons';
 
 const router = createBrowserRouter([
   {
@@ -114,13 +117,17 @@ const router = createBrowserRouter([
     element: <AdminDash/>,
     children: [
       {
-        path: "productreview",
-        element: <ModReview/>,
+        path: "statistics",
+        element: <Statistics/>,
       },
    
       {
-        path: "reports",
-        element: <Reported/>,
+        path: "manageusers",
+        element: <ManageUsers/>,
+      },
+      {
+        path: "coupons",
+        element: <ManageCoupons/>,
       },
   
    

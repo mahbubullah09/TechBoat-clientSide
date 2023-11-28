@@ -31,24 +31,34 @@ const AdminSlider = () => {
 
 <div  className="w-48 mx-6 mt-2 " >
 <div className=" rounded-xl shadow-lg mb-6 px-6 py-4 bg-orange-200  ">
-              <Link to={'productreview'}>
+              <Link to={'statistics'}>
               <p className="inline-block text-gray-600 hover:text-black my-4 w-full">
-                <span className="material-icons-outlined float-left pr-2">
-                  reviews
+              <span className="material-icons-outlined float-left pr-2">
+              bar_chart
                 </span>
-                Product Review
+                Statistics
               </p> 
               
               </Link>
 
-              <Link to={'reports'}>
+              <Link to={'manageusers'}>
               
               
               <p className="inline-block text-gray-600 hover:text-black my-4 w-full">
                 <span className="material-icons-outlined float-left pr-2">
-                  report
+                  group
                 </span>
-                Reports
+                Manage Users
+              </p>
+              </Link>
+              <Link to={'coupons'}>
+              
+              
+              <p className="inline-block text-gray-600 hover:text-black my-4 w-full">
+                <span className="material-icons-outlined float-left pr-2">
+                  data_saver_on
+                </span>
+                 Coupons
               </p>
               </Link>
             
