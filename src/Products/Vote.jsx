@@ -165,9 +165,10 @@ const [IsDownVoted, setIsDownVoted] = useState();
 
 useEffect(() => {
   DownVotedRF()
+
   const findDownVoted = DownVoted?.find((data) => data?.product_id === id);
   setIsDownVoted(findDownVoted);
-}, [id, DownVoted, DownVotedRF]);
+}, [id, DownVoted,DownVotedRF]);
 
 
    

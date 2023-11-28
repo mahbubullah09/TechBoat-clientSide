@@ -26,8 +26,9 @@ import ModReview from './Dashboard/ModaratorDash/ModReview';
 import AdminDash from './Mainlayout/AdminDash';
 import Statistics from './Dashboard/Admin/Statistics';
 import ManageUsers from './Dashboard/Admin/ManageUsers';
-import ManageCoupons from './Dashboard/Admin/ManageCoupons';
+import ManageCoupons from './Dashboard/Admin/Coupon/ManageCoupons';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import CouponForm from './Dashboard/Admin/Coupon/CouponForm';
 
 const router = createBrowserRouter([
   {
@@ -129,6 +130,10 @@ const router = createBrowserRouter([
       {
         path: "coupons",
         element: <ManageCoupons/>,
+      },
+      {
+        path: "coupons/addcoupon",
+        element: <CouponForm/>,
       },
   
    

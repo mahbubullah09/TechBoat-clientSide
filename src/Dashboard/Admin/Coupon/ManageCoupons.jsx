@@ -1,9 +1,10 @@
 import React from 'react';
+import AddCoupon from './AddCoupon';
 
 const ManageCoupons = () => {
     return (
-        <div>
-            Coupon  soon...
+        <div className='my-12'>
+            <AddCoupon/>
         </div>
     );
 };
