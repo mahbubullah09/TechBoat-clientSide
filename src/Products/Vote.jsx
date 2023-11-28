@@ -48,7 +48,7 @@ useEffect(() =>{
       return res.data
     }
   })
-  console.log("Voted data",Voted);
+ 
 
  
 
@@ -63,7 +63,7 @@ useEffect(() =>{
     setIsVoted(findVoted);
   }, [id, Voted]);
 
-  console.log(IsVoted);
+
 
 
 
