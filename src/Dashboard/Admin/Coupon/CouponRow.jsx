@@ -74,7 +74,7 @@ const CouponRow = ({ products, handleDelete }) => {
       <th>
    
           <div className="flex flex-col gap-2">
-          <Link to={`product/${products?._id}`}>
+          <Link to={`coupondetails/${products?._id}`}>
             <button className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
               Details
             </button>

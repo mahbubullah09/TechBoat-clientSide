@@ -30,6 +30,7 @@ import ManageCoupons from './Dashboard/Admin/Coupon/ManageCoupons';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import CouponForm from './Dashboard/Admin/Coupon/CouponForm';
 import UpdateCoupon from './Dashboard/Admin/Coupon/UpdateCoupon';
+import CouponDetails from './Dashboard/Admin/Coupon/CouponDetails';
 
 const router = createBrowserRouter([
   {
@@ -140,6 +141,14 @@ const router = createBrowserRouter([
         path: 'coupons/updatecoupon/:id',
         element:
           <UpdateCoupon/>,
+        
+         loader: ({params}) => fetch(`http://localhost:5000/coupons/${params.id}`)
+      },
+  
+      {
+        path: 'coupons/coupondetails/:id',
+        element:
+          <CouponDetails/>,
         
          loader: ({params}) => fetch(`http://localhost:5000/coupons/${params.id}`)
       },

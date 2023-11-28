@@ -1,7 +1,13 @@
-const CouponCard = ({ data }) => {
-  return (
-    <div>
-      <div className="container bg-gradient-to-r from-indigo-500 to-violet-500 text-white p-8 rounded-lg shadow-lg w-full mx-auto">
+import React from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
+
+const CouponDetails = () => {
+
+    const data = useLoaderData();
+    
+    return (
+        <div className='my-20'>
+             <div className="container bg-gradient-to-r from-indigo-500 to-violet-500 text-white p-8 rounded-lg shadow-lg w-full mx-auto">
         <div className="text-3xl font-bold mb-4">Special Offer!</div>
         <div className="text-lg mb-4">
           Get{" "}
@@ -21,8 +27,8 @@ const CouponCard = ({ data }) => {
           <p>Terms and conditions apply.</p>
         </div>
       </div>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default CouponCard;
+export default CouponDetails;
