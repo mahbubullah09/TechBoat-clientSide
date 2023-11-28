@@ -7,9 +7,20 @@ import useAxiosPublic from '../hooks/usePublic';
 const Vote = ({data}) => {
   const {user} = useContext(AuthContext)
   const user_mail= user?.email
+
+  const [blocked, setBlocked] = useState(true) 
    
     const id = data?._id;
 
+const ownerMail = data?.email
+
+
+useEffect(() =>{
+  if(user_mail === ownerMail){
+    setBlocked(false)
+  }
+},[user_mail,ownerMail])
+    
     const axiosPublic = useAxiosPublic();
 
     const [UV, setUV] = useState([]);
@@ -193,7 +204,7 @@ useEffect(() => {
                   <div className="flex items-center gap-1">
                    
                      
-                    {user ? (
+                    {user && blocked  ? (
                       <div>
                         {!IsVoted?
                           <button onClick={handleUp} className="text-xl">
@@ -216,7 +227,7 @@ useEffect(() => {
 
                   <div className="flex items-center gap-1">
                    <div>
-                   {user ? (
+                   {user && blocked ? (
                      <div>
                       {!IsDownVoted?
                          <button onClick={handleDown} className="text-xl">

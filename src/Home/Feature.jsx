@@ -28,13 +28,20 @@ const Feature = () => {
 
 
     data.sort((a, b) => {
-        let x = parseInt(a.vote_count)
-        let y = parseInt(b.vote_count)
+        const timeA = new Date(a.time);
+        const timeB = new Date(b.time);
     
+        // Compare dates first
+        if (timeA.toDateString() !== timeB.toDateString()) {
+          return timeB - timeA;
+        }
     
-    return y-x;
+        // If the dates are the same, compare times
+        return timeB.getTime() - timeA.getTime();
+      });
+    
    
-});
+
 
 
     
