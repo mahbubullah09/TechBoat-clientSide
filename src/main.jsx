@@ -23,6 +23,7 @@ import MyProfile from './Dashboard/MyProfile';
 import ModDash from './Mainlayout/ModDash';
 import Reported from './Dashboard/ModaratorDash/Reported';
 import ModReview from './Dashboard/ModaratorDash/ModReview';
+import AdminDash from './Mainlayout/AdminDash';
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,24 @@ const router = createBrowserRouter([
         </PrivateRoute>,
 
       },
+   
+     
+    ],
+  },
+  {
+    path: "admindashboard",
+    element: <AdminDash/>,
+    children: [
+      {
+        path: "productreview",
+        element: <ModReview/>,
+      },
+   
+      {
+        path: "reports",
+        element: <Reported/>,
+      },
+  
    
      
     ],

@@ -95,10 +95,10 @@ const Navbar = () => {
                       />
                     ) : (
                       <div className="avatar placeholder">
-                      <div className="bg-neutral text-neutral-content rounded-full w-8">
-                        <span className="text-xs">N</span>
+                        <div className="bg-neutral text-neutral-content rounded-full w-8">
+                          <span className="text-xs">N</span>
+                        </div>
                       </div>
-                    </div>
                     )}
                   </div>
                 </label>
@@ -106,54 +106,69 @@ const Navbar = () => {
                   tabIndex={0}
                   className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-60 text-black overflow-hidden "
                 >
-                 <div className="space-y-2">
-                 <div>
-                    <p>{user?.displayName}</p>
-                  </div>
-                  <div>
-                    <p className="w-52">{user?.email}</p>
-                  </div>
-                  <div>
-                  <NavLink
-          to="userdashboard"
-          className={({ isActive }) =>
-            isActive
-              ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
-              : " font-normal text-base  py-2 px-4  "
-          }
-        >
-          {" "}
-          User DashBoard
-          <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
-          <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
-        </NavLink>
-      
-                  <NavLink
-          to="moddashboard"
-          className={({ isActive }) =>
-            isActive
-              ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
-              : " font-normal text-base  py-2 px-4  "
-          }
-        >
-          {" "}
-          ModDashBoard
-          <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
-          <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
-        </NavLink>
-      
-                  </div>
-                  <div>
+                  <div className="space-y-2">
                     <div>
-                      <button
-                        className="  text-sm md:text-base font-semibold hover:bg-[#e9c836] hover:text-black bg-[#ffcf00]  text-black py-1 px-2 md:py-2 md:px-4 rounded-md hover:bg-blue-gray-800"
-                        onClick={logOut}
+                      <p>{user?.displayName}</p>
+                    </div>
+                    <div>
+                      <p className="w-52">{user?.email}</p>
+                    </div>
+                    <div>
+                      <NavLink
+                        to="userdashboard"
+                        className={({ isActive }) =>
+                          isActive
+                            ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
+                            : " font-normal text-base  py-2 px-4  "
+                        }
                       >
-                        Logout
-                      </button>
+                        {" "}
+                        User DashBoard
+                        <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+                        <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+                      </NavLink>
+
+                      <NavLink
+                        to="moddashboard"
+                        className={({ isActive }) =>
+                          isActive
+                            ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
+                            : " font-normal text-base  py-2 px-4  "
+                        }
+                      >
+                        {" "}
+                        ModDashBoard
+                        <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+                        <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+                      </NavLink>
+                     
+                    </div>
+                    <div>
+                    <NavLink
+                        to="admindashboard"
+                        className={({ isActive }) =>
+                          isActive
+                            ? " text-white font-normal text-base bg-[#0f829f] rounded-full   py-1 px-3     "
+                            : " font-normal text-base  py-2 px-4  "
+                        }
+                      >
+                        {" "}
+                        Admin Dash
+                        <span className="absolute -bottom-0 left-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+                        <span className="absolute -bottom-0 right-1/2 w-0 h-0.5 bg-[#0f829f] group-hover:w-1/3 group-hover:transition-all"></span>
+                      </NavLink>
+                    </div>
+                    <div>
+                      <div>
+                        <button
+                          className="  text-sm md:text-base font-semibold hover:bg-[#e9c836] hover:text-black bg-[#ffcf00]  text-black py-1 px-2 md:py-2 md:px-4 rounded-md hover:bg-blue-gray-800"
+                          onClick={logOut}
+                        >
+                          Logout
+                        </button>
+                      </div>
                     </div>
                   </div>
-                 </div>
                 </ul>
               </div>
             </div>
