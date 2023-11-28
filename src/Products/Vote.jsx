@@ -7,6 +7,9 @@ import { useQuery } from '@tanstack/react-query';
 import Products from './Products';
 
 const Vote = ({data}) => {
+
+  const [RF,setRF]= useState(null)
+  const [DRF,setDRF]= useState(null)
   const {user} = useContext(AuthContext)
   const user_mail= user?.email
 
@@ -75,13 +78,14 @@ useEffect(() =>{
   // }, [axiosPublic,user_mail]);
 
 
-  const {data :   Voted = [], refetch: votedRF} = useQuery({
-    queryKey: ["upvotes", user_mail ],
+  const {data :   Voted = [], } = useQuery({
+    queryKey: ["upvotes", user_mail, RF ],
     queryFn: async () =>{
       const res = await axiosPublic.get(`/upvotes/email?email=${user_mail}`);
       return res.data
     }
   })
+  console.log("Voted data",Voted);
 
  
 
@@ -90,10 +94,13 @@ useEffect(() =>{
   const [IsVoted, setIsVoted] = useState();
 
   useEffect(() => {
-    votedRF()
+    
     const findVoted = Voted?.find((data) => data?.product_id === id);
+   
     setIsVoted(findVoted);
-  }, [id, Voted,votedRF]);
+  }, [id, Voted]);
+
+  console.log(IsVoted);
 
 
 
@@ -149,8 +156,8 @@ const {data :  downvotes = [], refetch: DownRf} = useQuery({
 //   //   .then((data) => setDownVoted(data));
 // }, [axiosPublic,user_mail]);
 
-const {data :   DownVoted = [], refetch: DownVotedRF} = useQuery({
-  queryKey: ["downvotes", user_mail ],
+const {data :   DownVoted = [] } = useQuery({
+  queryKey: ["downvotes", user_mail,DRF ],
   queryFn: async () =>{
     const res = await axiosPublic.get(`/downvotes/email?email=${user_mail}`);
     return res.data
@@ -164,11 +171,11 @@ const {data :   DownVoted = [], refetch: DownVotedRF} = useQuery({
 const [IsDownVoted, setIsDownVoted] = useState();
 
 useEffect(() => {
-  DownVotedRF()
+ 
 
   const findDownVoted = DownVoted?.find((data) => data?.product_id === id);
   setIsDownVoted(findDownVoted);
-}, [id, DownVoted,DownVotedRF]);
+}, [id, DownVoted]);
 
 
    
@@ -200,6 +207,7 @@ useEffect(() => {
               timer: 1500,
             });
             refetch()
+            setRF(new Date().getTime())
           }
         });
     }
@@ -231,6 +239,7 @@ useEffect(() => {
             timer: 1500,
           });
         DownRf()
+        setDRF(new Date().getTime())
         }
       });
   }
