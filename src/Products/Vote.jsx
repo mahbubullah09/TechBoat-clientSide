@@ -28,28 +28,7 @@ useEffect(() =>{
     
     const axiosPublic = useAxiosPublic();
 
-  //   const [UV, setUV] = useState([]);
   
- 
-
-  // useEffect(() => {
-  //   // //    axios.get(url, {withCredentials:true})
-  //   // //    .then(res => {
-  //   // //     setBookings(res.data)
-  //   // //    })
-
-  //   // fetch(`http://localhost:5000/`)
-  //   //   .then((res) => res.json())
-  //   //   .then((data) => setUV(data));
-
-  //     axiosPublic.get(`/upvotes/products?product_id=${id}`)
-  //     .then((res) => {
-  //       setUV(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [id,axiosPublic]);
 
   const {data :  upvotes = [], refetch} = useQuery({
     queryKey: ["upvotes", id],
@@ -60,22 +39,6 @@ useEffect(() =>{
   })
 
 
-
-  // const [Voted, setVoted] = useState([]);
-
-
-  // useEffect(() => {
-  //   axiosPublic.get(`/upvotes/email?email=${user_mail}`)
-  //   .then((res) => {
-  //     setVoted(res.data);
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
-  //   // fetch(url)
-  //   //   .then((res) => res.json())
-  //   //   .then((data) => setVoted(data));
-  // }, [axiosPublic,user_mail]);
 
 
   const {data :   Voted = [], } = useQuery({
@@ -106,28 +69,7 @@ useEffect(() =>{
 
   //downvote
 
-//   const [DV, setDV] = useState([]);
- 
 
-
-// useEffect(() => {
-//   // //    axios.get(url, {withCredentials:true})
-//   // //    .then(res => {
-//   // //     setBookings(res.data)
-//   // //    })
-
-//   // fetch(`http://localhost:5000/`)
-//   //   .then((res) => res.json())
-//   //   .then((data) => setDV(data));
-
-//     axiosPublic.get(`/downvotes/products?product_id=${id}`)
-//     .then((res) => {
-//       setDV(res.data);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
-// }, [id,axiosPublic]);
 
 const {data :  downvotes = [], refetch: DownRf} = useQuery({
   queryKey: ["downvotes", id],
@@ -138,23 +80,6 @@ const {data :  downvotes = [], refetch: DownRf} = useQuery({
 })
 
 
-
-
-// const [DownVoted, setDownVoted] = useState([]);
-
-
-// useEffect(() => {
-//   axiosPublic.get(`/downvotes/email?email=${user_mail}`)
-//   .then((res) => {
-//     setDownVoted(res.data);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
-//   // fetch(url)
-//   //   .then((res) => res.json())
-//   //   .then((data) => setDownVoted(data));
-// }, [axiosPublic,user_mail]);
 
 const {data :   DownVoted = [] } = useQuery({
   queryKey: ["downvotes", user_mail,DRF ],

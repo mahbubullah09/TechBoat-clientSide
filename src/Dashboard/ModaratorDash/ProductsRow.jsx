@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/usePublic";
 
 const ProductsRow = ({ products, handleDelete }) => {
-  const Stime = moment().format("YYYY-MM-DD h:mm:ss a");
+  
   
   const {
     _id,
@@ -19,7 +19,7 @@ const ProductsRow = ({ products, handleDelete }) => {
     tags,
     time,
     OwnerName,
-    OwnerImage
+    OwnerImage,
    
   } = products;
 
@@ -61,7 +61,7 @@ const ProductsRow = ({ products, handleDelete }) => {
     name,
     status,
     tags,
-    time :Stime,
+    time ,
     }
     console.log(feature);
 

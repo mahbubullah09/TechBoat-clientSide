@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../Products/ProductCard";
 import useAxiosPublic from "../hooks/usePublic";
 import { Link } from "react-router-dom";
+import CouponSection from "../CouponSection";
 
 const Trending = () => {
   const axiosPublic = useAxiosPublic();
@@ -49,6 +50,10 @@ const Trending = () => {
           </button>
         </Link>
       </div>
+
+     <div className="my-8">
+     <CouponSection/>
+     </div>
     </div>
   );
 };

@@ -1,4 +1,8 @@
-import { useEffect, useState } from "react";
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
+import useAxiosPublic from './hooks/usePublic';
+import CouponCard from './CouponCard';
+
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
@@ -13,46 +17,40 @@ import {
   Pagination,
   Navigation,
 } from "swiper/modules";
-import ReviewCardStracture from "./ReviewCardStracture";
-import useAxiosPublic from "../hooks/usePublic";
 
+const CouponSection = () => {
+    const axiosPublic = useAxiosPublic();
 
-const ReviewCard = ({id}) => {
-  const axiosPublic = useAxiosPublic();
-    console.log(id);
-    const [reviewed, setReviewed] = useState([]);
- 
-
-  useEffect(() => {
-
-
-      axiosPublic.get(`/review/products?gadget_id=${id}`)
-      .then((res) => {
-        setReviewed(res.data);
+    const {data :  coupons = []} = useQuery({
+        queryKey: ["coupons"],
+        queryFn: async () =>{
+          const res = await axiosPublic.get(`http://localhost:5000/coupons`);
+          return res.data
+        }
       })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id,axiosPublic]);
-  console.log(reviewed);
+
+      console.log(coupons);
+    
+
     return (
-        <div className=" grid place-content-center">
-             {reviewed.length > 0 ? (
-                  <div className=" max-w-4xl">
+        <div>
+
+
+<div className=" max-w-6xl">
                     <Swiper
                       autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
                       }}
-                      slidesPerView={2}
+                      slidesPerView={1}
                       spaceBetween={30}
                       effect={"coverflow"}
                       grabCursor={true}
                       centeredSlides={true}
                       loop={true}
                       coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
+                        rotate: 50,
+                        stretch: 50,
                         depth: 100,
                         modifier: 2.5,
                       }}
@@ -70,9 +68,9 @@ const ReviewCard = ({id}) => {
                       ]}
                       className="swiper_container"
                     >
-                      {reviewed?.map((data, idx) => (
+                      {coupons?.map((data, idx) => (
                         <SwiperSlide key={idx}>
-                         <ReviewCardStracture data={data}/>
+                         <CouponCard data={data}/>
                         </SwiperSlide>
                       ))}
 
@@ -87,16 +85,12 @@ const ReviewCard = ({id}) => {
                       </div>
                     </Swiper>
                   </div>
-                ) : (
-                  <div>
-                    <h2 className="text-4xl font-bold text-center text-gray-300 my-10">
-                      No Review Available
-                    </h2>
-                  </div>
-                )}
+           
+
+           
             
         </div>
     );
 };
 
-export default ReviewCard;
+export default CouponSection;
