@@ -59,12 +59,7 @@ const Feature = () => {
 
             </div>
             <div className='grid place-content-center'>
-            <Link to={`/products`}>
-            <button className="bg-[#0D6EFD] text-white text-sm font-semibold px-4 py-2 rounded">
-          See All
-        </button>
-
-            </Link>
+        
             </div>
 
             

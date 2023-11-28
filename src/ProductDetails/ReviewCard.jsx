@@ -45,13 +45,13 @@ const ReviewCard = ({id}) => {
     return (
         <div className=" grid place-content-center">
              {reviewed.length > 0 ? (
-                  <div className=" max-w-md">
+                  <div className=" max-w-4xl">
                     <Swiper
                       autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
                       }}
-                      slidesPerView={1}
+                      slidesPerView={2}
                       spaceBetween={30}
                       effect={"coverflow"}
                       grabCursor={true}

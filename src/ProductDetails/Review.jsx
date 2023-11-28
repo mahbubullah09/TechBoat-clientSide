@@ -126,7 +126,9 @@ const Review = ({data}) => {
         </dialog>
         <hr />
 
-        <ReviewCard id={id}/>
+     <div className='w-full'>
+     <ReviewCard id={id}/>
+     </div>
             
             
         </div>
