@@ -42,7 +42,7 @@ const Reported = () => {
   }, [axiosPublic, url]);
   console.log(reports);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id,RID) => {
     console.log(id);
     Swal.fire({
       title: "Are you sure?",
@@ -54,6 +54,30 @@ const Reported = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
+          //Deletereports
+          fetch(`http://localhost:5000/reports/${RID}`, {
+            method: "DELETE",
+          })
+          
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+  
+              if (data.deletedCount > 0) {
+                
+                const remaining = reports.filter(
+                  (reports) => reports._id !== id
+                );
+  
+                setreports(remaining);
+              }
+            });
+
+            //delete products
+
+
+
+
             fetch(`http://localhost:5000/products/${id}`, {
               method: "DELETE",
             })
@@ -62,7 +86,7 @@ const Reported = () => {
                 console.log(data);
     
                 if (data.deletedCount > 0) {
-                  Swal.fire("Deleted!", "Your file has been deleted.", "success");
+                  Swal.fire("Deleted!", "This product has been deleted.", "success");
                 //   const remaining = reports.filter(
                 //     (reports) => reports._id !== id
                 //   );
@@ -70,10 +94,13 @@ const Reported = () => {
                 //   setreports(remaining);
                 }
               });
+
+            
           }
     });
   };
   const handleKeep = (id) => {
+    
     console.log(id);
     Swal.fire({
       title: "Are you sure?",
@@ -89,12 +116,13 @@ const Reported = () => {
             fetch(`http://localhost:5000/reports/${id}`, {
               method: "DELETE",
             })
+            
               .then((res) => res.json())
               .then((data) => {
                 console.log(data);
     
                 if (data.deletedCount > 0) {
-                  Swal.fire("Deleted!", "Your file has been Keeped.", "success");
+                  Swal.fire("Keeped!", "This product has been Keeped.", "success");
                   const remaining = reports.filter(
                     (reports) => reports._id !== id
                   );

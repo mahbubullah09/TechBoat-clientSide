@@ -43,7 +43,7 @@ const ReportedRow = ({ reports, handleDelete, handleKeep }) => {
 
          
             <button
-              onClick={() => handleDelete(reports?.product_id)}
+              onClick={() => handleDelete(reports?.product_id, reports?._id )}
               className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
             >
               Delete
