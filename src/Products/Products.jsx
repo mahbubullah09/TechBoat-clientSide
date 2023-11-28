@@ -1,29 +1,38 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import useAxiosPublic from "../hooks/usePublic";
+import { useQuery } from "@tanstack/react-query";
 
 const Products = () => {
     const [search, setSearch ] = useState('')
   const axiosPublic = useAxiosPublic();
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  useEffect(() => {
+  // useEffect(() => {
     //         fetch('http://localhost:5000/products')
     //         .then(response => response.json())
 
     //  .then(data => setData(data))
 
-    axiosPublic
-      .get(`/products/search?search=${search}`)
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [axiosPublic,search]);
+  //   axiosPublic
+  //     .get(`/products/search?search=${search}`)
+  //     .then((res) => {
+  //       setData(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, [axiosPublic,search]);
 
-  const sortedData = data.sort((a, b) => {
+  const {data :  products = []} = useQuery({
+    queryKey: ["products", search ? search : ""],
+    queryFn: async () =>{
+      const res = await axiosPublic.get(`/products/search?search=${search}`);
+      return res.data
+    }
+  })
+
+  const sortedData = products?.sort((a, b) => {
     const timeA = new Date(a.time);
     const timeB = new Date(b.time);
 

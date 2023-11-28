@@ -3,6 +3,8 @@ import { BiDownvote, BiSolidDownvote, BiSolidUpvote, BiUpvote } from "react-icon
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../hooks/usePublic';
+import { useQuery } from '@tanstack/react-query';
+import Products from './Products';
 
 const Vote = ({data}) => {
   const {user} = useContext(AuthContext)
@@ -23,46 +25,64 @@ useEffect(() =>{
     
     const axiosPublic = useAxiosPublic();
 
-    const [UV, setUV] = useState([]);
+  //   const [UV, setUV] = useState([]);
   
  
 
-  useEffect(() => {
-    // //    axios.get(url, {withCredentials:true})
-    // //    .then(res => {
-    // //     setBookings(res.data)
-    // //    })
+  // useEffect(() => {
+  //   // //    axios.get(url, {withCredentials:true})
+  //   // //    .then(res => {
+  //   // //     setBookings(res.data)
+  //   // //    })
 
-    // fetch(`http://localhost:5000/`)
-    //   .then((res) => res.json())
-    //   .then((data) => setUV(data));
+  //   // fetch(`http://localhost:5000/`)
+  //   //   .then((res) => res.json())
+  //   //   .then((data) => setUV(data));
 
-      axiosPublic.get(`/upvotes/products?product_id=${id}`)
-      .then((res) => {
-        setUV(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id,axiosPublic]);
+  //     axiosPublic.get(`/upvotes/products?product_id=${id}`)
+  //     .then((res) => {
+  //       setUV(res.data);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, [id,axiosPublic]);
+
+  const {data :  upvotes = [], refetch} = useQuery({
+    queryKey: ["upvotes", id],
+    queryFn: async () =>{
+      const res = await axiosPublic.get(`/upvotes/products?product_id=${id}`);
+      return res.data
+    }
+  })
 
 
 
-  const [Voted, setVoted] = useState([]);
+  // const [Voted, setVoted] = useState([]);
 
 
-  useEffect(() => {
-    axiosPublic.get(`/upvotes/email?email=${user_mail}`)
-    .then((res) => {
-      setVoted(res.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((data) => setVoted(data));
-  }, [axiosPublic,user_mail]);
+  // useEffect(() => {
+  //   axiosPublic.get(`/upvotes/email?email=${user_mail}`)
+  //   .then((res) => {
+  //     setVoted(res.data);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
+  //   // fetch(url)
+  //   //   .then((res) => res.json())
+  //   //   .then((data) => setVoted(data));
+  // }, [axiosPublic,user_mail]);
+
+
+  const {data :   Voted = [], refetch: votedRF} = useQuery({
+    queryKey: ["upvotes", user_mail ],
+    queryFn: async () =>{
+      const res = await axiosPublic.get(`/upvotes/email?email=${user_mail}`);
+      return res.data
+    }
+  })
+
  
 
   //filter
@@ -70,54 +90,73 @@ useEffect(() =>{
   const [IsVoted, setIsVoted] = useState();
 
   useEffect(() => {
+    votedRF()
     const findVoted = Voted?.find((data) => data?.product_id === id);
     setIsVoted(findVoted);
-  }, [id, Voted]);
+  }, [id, Voted,votedRF]);
 
 
 
   //downvote
 
-  const [DV, setDV] = useState([]);
+//   const [DV, setDV] = useState([]);
  
 
 
-useEffect(() => {
-  // //    axios.get(url, {withCredentials:true})
-  // //    .then(res => {
-  // //     setBookings(res.data)
-  // //    })
+// useEffect(() => {
+//   // //    axios.get(url, {withCredentials:true})
+//   // //    .then(res => {
+//   // //     setBookings(res.data)
+//   // //    })
 
-  // fetch(`http://localhost:5000/`)
-  //   .then((res) => res.json())
-  //   .then((data) => setDV(data));
+//   // fetch(`http://localhost:5000/`)
+//   //   .then((res) => res.json())
+//   //   .then((data) => setDV(data));
 
-    axiosPublic.get(`/downvotes/products?product_id=${id}`)
-    .then((res) => {
-      setDV(res.data);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-}, [id,axiosPublic]);
+//     axiosPublic.get(`/downvotes/products?product_id=${id}`)
+//     .then((res) => {
+//       setDV(res.data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// }, [id,axiosPublic]);
+
+const {data :  downvotes = [], refetch: DownRf} = useQuery({
+  queryKey: ["downvotes", id],
+  queryFn: async () =>{
+    const res = await axiosPublic.get(`/downvotes/products?product_id=${id}`);
+    return res.data
+  }
+})
 
 
 
-const [DownVoted, setDownVoted] = useState([]);
+
+// const [DownVoted, setDownVoted] = useState([]);
 
 
-useEffect(() => {
-  axiosPublic.get(`/downvotes/email?email=${user_mail}`)
-  .then((res) => {
-    setDownVoted(res.data);
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-  // fetch(url)
-  //   .then((res) => res.json())
-  //   .then((data) => setDownVoted(data));
-}, [axiosPublic,user_mail]);
+// useEffect(() => {
+//   axiosPublic.get(`/downvotes/email?email=${user_mail}`)
+//   .then((res) => {
+//     setDownVoted(res.data);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+//   // fetch(url)
+//   //   .then((res) => res.json())
+//   //   .then((data) => setDownVoted(data));
+// }, [axiosPublic,user_mail]);
+
+const {data :   DownVoted = [], refetch: DownVotedRF} = useQuery({
+  queryKey: ["downvotes", user_mail ],
+  queryFn: async () =>{
+    const res = await axiosPublic.get(`/downvotes/email?email=${user_mail}`);
+    return res.data
+  }
+})
+
 
 
 //filter
@@ -125,9 +164,10 @@ useEffect(() => {
 const [IsDownVoted, setIsDownVoted] = useState();
 
 useEffect(() => {
+  DownVotedRF()
   const findDownVoted = DownVoted?.find((data) => data?.product_id === id);
   setIsDownVoted(findDownVoted);
-}, [id, DownVoted]);
+}, [id, DownVoted, DownVotedRF]);
 
 
    
@@ -158,6 +198,7 @@ useEffect(() => {
               showConfirmButton: false,
               timer: 1500,
             });
+            refetch()
           }
         });
     }
@@ -188,6 +229,7 @@ useEffect(() => {
             showConfirmButton: false,
             timer: 1500,
           });
+        DownRf()
         }
       });
   }
@@ -222,7 +264,7 @@ useEffect(() => {
                       </p>
                     )}
                     
-                    <h2> {UV?.length}</h2>
+                    <h2> {upvotes?.length}</h2>
                   </div>
 
                   <div className="flex items-center gap-1">
@@ -246,7 +288,7 @@ useEffect(() => {
                     )}
                    </div>
 
-                    <h2> {DV?.length}</h2>
+                    <h2> {downvotes?.length}</h2>
                   </div>
                 </div>
             
