@@ -5,22 +5,34 @@ import axios from "axios";
 import { AuthContext } from "../../Provider/AuthProvider";
 import ProductRow from "../MyProducts/ProductRow";
 import ProductsRow from "./ProductsRow";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../hooks/usePublic";
 
 const ModReview = () => {
   const { user } = useContext(AuthContext);
-  const [products, setproducts] = useState([]);
-  console.log(products);
-  const url = `http://localhost:5000/allproducts`;
 
-  useEffect(() => {
-    //     axios.get(url, { withCredentials: true }).then((res) => {
-    //       setproducts(res.data);
-    //     });
 
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setproducts(data));
-  }, [url]);
+  const axiosPublic = useAxiosPublic();
+
+  const { data: products = [] } = useQuery({
+    queryKey: ["allproducts"],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`allproducts`);
+      return res.data;
+    },
+  });
+
+  const sortedData = [...products].sort((a, b) => {
+    if (a.status === 'pending' && b.status !== 'pending') {
+      return -1;
+    } else if (a.status !== 'pending' && b.status === 'pending') {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
+
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -75,7 +87,7 @@ const ModReview = () => {
           <tbody>
             {/* row */}
 
-            {products.map((products) => (
+            {sortedData.map((products) => (
               <ProductsRow
                 key={products._id}
                 products={products}

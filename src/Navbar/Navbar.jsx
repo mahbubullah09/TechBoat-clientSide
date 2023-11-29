@@ -21,24 +21,7 @@ const Navbar = () => {
     },
   });
   console.log( role);
-  // console.log(DashUser?.role);
-  // useEffect(() =>{
-  //   console.log(DashUser.role);
-  // },[DashUser])
-
-// const [dasUser, setDashUser] = useState()
-//   const url = `http://localhost:5000/user/email?email=${user_mail}`;
-
-//   useEffect(() => {
-//     //     axios.get(url, { withCredentials: true }).then((res) => {
-//     //       setproducts(res.data);
-//     //     });
-
-//     fetch(url)
-//       .then((res) => res.json())
-//       .then((data) => setDashUser(data[0].role));
-//   }, [url]);
-//   console.log(dasUser);
+  
 
   const navLink = (
     <div className=" gap-2 flex flex-col lg:flex-row ">
