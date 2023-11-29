@@ -51,20 +51,17 @@ const Statistics = () => {
       {/* <SectionTitle title="Statistics Page" /> */}
       <div className="stats border border-lime-500  ">
         <div className="stat text-center">
-          <div className="stat-figure text-secondary"></div>
-          <div className="stat-title ">Total Products</div>
+          <div className="text-lg font-bold ">Total Products</div>
           <div className="stat-value text-[#003f5c]">{stats[1]?.products}</div>
         </div>
 
         <div className="stat text-center">
-          <div className="stat-figure text-secondary"></div>
-          <div className="stat-title ">Total Users</div>
+          <div className="text-lg font-bold ">Total Users</div>
           <div className="stat-value text-[#ffa600]">{stats[0]?.users}</div>
         </div>
 
         <div className="stat text-center">
-          <div className="stat-figure text-secondary"></div>
-          <div className="stat-title">Total Reviews</div>
+          <div className="text-lg font-bold">Total Reviews</div>
           <div className="stat-value text-[#bc5090] ">{stats[2]?.reviews}</div>
         </div>
       </div>
