@@ -4,11 +4,13 @@ import SocialLogIN from "./SocialLogIN";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import useAxiosPublic from "../hooks/usePublic";
 
 
 
 
 const SingUp = () => {
+  const axiosPublic = useAxiosPublic();
   const { user, createUser, handleUpdateProfile } = useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -49,8 +51,15 @@ const SingUp = () => {
     createUser(email, password)
       .then((res) => {
         handleUpdateProfile(name, image).then(() => {
-          toast.success("User created successfully");
-          navigate("/");
+          const userInfo = {
+            name: res.user?.displayName,
+            email: res.user?.email,
+          };
+          axiosPublic.post("/users", userInfo).then(() => {
+           
+            navigate("/");
+          });   
+         
 
           toast.success("Succesfully create account");
         });
