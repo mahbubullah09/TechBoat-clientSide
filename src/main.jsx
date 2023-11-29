@@ -25,7 +25,7 @@ import Reported from './Dashboard/ModaratorDash/Reported';
 import ModReview from './Dashboard/ModaratorDash/ModReview';
 import AdminDash from './Mainlayout/AdminDash';
 import Statistics from './Dashboard/Admin/Statistics';
-import ManageUsers from './Dashboard/Admin/ManageUsers';
+import ManageUsers from './Dashboard/Admin/ManageUsers/ManageUsers';
 import ManageCoupons from './Dashboard/Admin/Coupon/ManageCoupons';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import CouponForm from './Dashboard/Admin/Coupon/CouponForm';

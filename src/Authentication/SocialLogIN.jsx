@@ -22,6 +22,7 @@ const SocialLogIn = () => {
             const userInfo = {
                 name: res.user?.displayName,
                 email: res.user?.email,
+                role: 'user'
               };
               axiosPublic.post("/users", userInfo).then(() => {
                 toast.success('Succesfully logged in')
