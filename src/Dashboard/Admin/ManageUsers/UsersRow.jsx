@@ -43,7 +43,7 @@ const UsersRow = ({ users,handleAdmin,handleRemove,handleModarator }) => {
       <th>{users?.role}</th>
 
       <th>
-       { users?.email === 'admin@gmail.com' ?
+       { users?.email === 'admin@techboat.com' ?
        <h2 className="font-bold text-base">Main Admin</h2>
 
         :
