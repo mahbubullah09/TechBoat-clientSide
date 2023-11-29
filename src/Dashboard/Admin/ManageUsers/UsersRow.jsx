@@ -5,125 +5,34 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../hooks/usePublic";
 
-
-const UsersRow = ({ users, handleDelete }) => {
-  
-  
-  const {
-    _id,
-name,
-email,
-role
-   
-  } = users;
-
-  const product_id = _id;
+const UsersRow = ({ users,handleAdmin,handleRemove,handleModarator }) => {
+  const { _id, name, email, role } = users;
+  console.log(role, email, name, _id);
   const id = _id;
 
- 
+  const admin = "admin";
+  const modarator = "modarator";
+  const Aam = "user";
 
-  const [UV, setUV] = useState([]);
-  const axiosPublic = useAxiosPublic();
 
-  useEffect(() => {
-    // //    axios.get(url, {withCredentials:true})
-    // //    .then(res => {
-    // //     setBookings(res.data)
-    // //    })
 
-    // fetch(`http://localhost:5000/`)
-    //   .then((res) => res.json())
-    //   .then((data) => setUV(data));
-
-    axiosPublic
-      .get(`/upvotes/users?product_id=${id}`)
-      .then((res) => {
-        setUV(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id, axiosPublic]);
-
-  const handleFeature = () => {
-    const feature = {
-    product_id,
-    description,
-    email,
-    external_link,
-    image,
+  const MakeAdmin = {
     name,
-    status,
-    tags,
-    time ,
-    }
-    console.log(feature);
-
-
-    fetch("http://localhost:5000/features", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(feature),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-
-          if (data.insertedId) {
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Feature Product added successfully",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          }
-        });
+    email,
+    role: admin,
   };
-  const NStatus = 'accepted'
+  const MakeModarator = {
+    name,
+    email,
+    role: modarator,
+  };
+  const MakeUser = {
+    name,
+    email,
+    role: Aam,
+  };
 
-  const handleUpdate = (id) =>{
-    console.log(id);
-
-    const productInfo = {
-      name,
-      image,
-      external_link,
-      description,
-      tags,
-      OwnerName,
-      email,
-      OwnerImage,
-      status: NStatus ,
-      time
-    };
-    console.log(productInfo);
-   
-
-    fetch(`http://localhost:5000/users/${id}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(productInfo),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-
-          if (data.modifiedCount > 0) {
-            Swal.fire({
-              icon: "success",
-              title: "Congaratulations",
-              text: "Product Updated succesfully!",
-            });
-          }
-        });
-
-
-  }
+ 
 
   return (
     <tr>
@@ -132,23 +41,50 @@ role
       </td>
       <th>{users?.email}</th>
       <th>{users?.role}</th>
-    
 
       <th>
+       { users?.email === 'admin@gmail.com' ?
+       <h2 className="font-bold text-base">Main Admin</h2>
+
+        :
         <div className="flex flex-col gap-2">
-          <Link to={`product/${users?._id}`}>
-            <button className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white">
+        <div>
+          {role === "admin" ? (
+            <button
+            onClick={ () =>handleRemove(users?._id , MakeUser)}
+              className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
+            >
+              Remove Admin
+            </button>
+          ) : (
+            <button
+              onClick={ () =>handleAdmin(users?._id, MakeAdmin)}
+              className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
+            >
               Make Admin
             </button>
-          </Link>
-
-          <button
-            onClick={handleFeature}
-            className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
-          >
-            Make Modarator
-          </button>
+          )}
         </div>
+        <div>
+          {role == "modarator" ? (
+            <button
+              onClick={ () =>handleRemove(users?._id , MakeUser)}
+              className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
+            >
+              Remove Modarator
+            </button>
+          ) : (
+            <button
+             
+              onClick={() =>handleModarator(users?._id , MakeModarator)}
+              className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
+            >
+              Make Modarator
+            </button>
+          )}
+        </div>
+      </div>
+       }
       </th>
     </tr>
   );
