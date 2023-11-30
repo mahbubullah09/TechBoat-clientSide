@@ -14,7 +14,7 @@ const ModReview = () => {
 
   const axiosPublic = useAxiosPublic();
 
-  const { data: products = [] } = useQuery({
+  const { data: products = [], refetch } = useQuery({
     queryKey: ["allproducts"],
     queryFn: async () => {
       const res = await axiosPublic.get(`allproducts`);
@@ -54,11 +54,9 @@ const ModReview = () => {
 
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              const remaining = products.filter(
-                (products) => products._id !== id
-              );
+           
 
-              setproducts(remaining);
+              refetch()
             }
           });
       }

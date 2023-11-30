@@ -28,28 +28,7 @@ const ProductsRow = ({ products, handleDelete }) => {
 
  
 
-  const [UV, setUV] = useState([]);
-  const axiosPublic = useAxiosPublic();
 
-  useEffect(() => {
-    // //    axios.get(url, {withCredentials:true})
-    // //    .then(res => {
-    // //     setBookings(res.data)
-    // //    })
-
-    // fetch(`http://localhost:5000/`)
-    //   .then((res) => res.json())
-    //   .then((data) => setUV(data));
-
-    axiosPublic
-      .get(`/upvotes/products?product_id=${id}`)
-      .then((res) => {
-        setUV(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id, axiosPublic]);
 
   const handleFeature = () => {
     const feature = {
