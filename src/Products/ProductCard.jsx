@@ -18,7 +18,7 @@ const ProductCard = ({ data }) => {
      animate={{ rotate: 360, scale: 1 }}
      transition={{
        type: "spring",
-       stiffness: 40,
+       stiffness: 50,
        damping: 10
      }}
   >
