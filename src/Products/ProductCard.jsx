@@ -14,11 +14,12 @@ const ProductCard = ({ data }) => {
     
     <div>
       <motion.div
-     whileHover={{ scale: 1.1 }}
-     whileTap={{
-       scale: 0.9,
-       
-       borderRadius: "100%"
+     initial={{ scale: 0 }}
+     animate={{ rotate: 360, scale: 1 }}
+     transition={{
+       type: "spring",
+       stiffness: 260,
+       damping: 20
      }}
   >
       

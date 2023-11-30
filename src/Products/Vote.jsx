@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/usePublic";
 import { useQuery } from "@tanstack/react-query";
 import Products from "./Products";
+import { Link } from "react-router-dom";
 
 const Vote = ({ data }) => {
   const [RF, setRF] = useState(null);
@@ -34,7 +35,9 @@ const Vote = ({ data }) => {
   const { data: upvotes = [], refetch } = useQuery({
     queryKey: ["upvotes", id],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/upvotes/products?product_id=${id}`, { withCredentials: true });
+      const res = await axiosPublic.get(`/upvotes/products?product_id=${id}`, {
+        withCredentials: true,
+      });
       return res.data;
     },
   });
@@ -42,9 +45,11 @@ const Vote = ({ data }) => {
   const { data: Voted = [] } = useQuery({
     queryKey: ["upvotes", user_mail, RF],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/upvotes/email?email=${user_mail}`, { withCredentials: true });
+      const res = await axiosPublic.get(`/upvotes/email?email=${user_mail}`, {
+        withCredentials: true,
+      });
       return res.data;
-    }
+    },
   });
 
   //filter
@@ -60,7 +65,10 @@ const Vote = ({ data }) => {
   const { data: downvotes = [], refetch: DownRf } = useQuery({
     queryKey: ["downvotes", id],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/downvotes/products?product_id=${id}`,{ withCredentials: true });
+      const res = await axiosPublic.get(
+        `/downvotes/products?product_id=${id}`,
+        { withCredentials: true }
+      );
       return res.data;
     },
   });
@@ -68,7 +76,9 @@ const Vote = ({ data }) => {
   const { data: DownVoted = [] } = useQuery({
     queryKey: ["downvotes", user_mail, DRF],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/downvotes/email?email=${user_mail}`,{ withCredentials: true });
+      const res = await axiosPublic.get(`/downvotes/email?email=${user_mail}`, {
+        withCredentials: true,
+      });
       return res.data;
     },
   });
@@ -150,22 +160,32 @@ const Vote = ({ data }) => {
     <div>
       <div className="mt-1 flex items-center gap-2 text-lg">
         <div className="flex items-center gap-1">
-          {user && blocked ? (
+          {user ? (
             <div>
-              {!IsVoted ? (
-                <button onClick={handleUp} className="text-xl">
-                  <BiUpvote />
-                </button>
+              {blocked ? (
+                <div>
+                  {!IsVoted ? (
+                    <button onClick={handleUp} className="text-xl">
+                      <BiUpvote />
+                    </button>
+                  ) : (
+                    <p className="text-xl">
+                      <BiSolidUpvote />
+                    </p>
+                  )}
+                </div>
               ) : (
                 <p className="text-xl">
-                  <BiSolidUpvote />
+                  <BiUpvote />
                 </p>
               )}
             </div>
           ) : (
-            <p className="text-xl">
-              <BiUpvote />
-            </p>
+            <Link to={"/login"}>
+              <p className="text-xl">
+                <BiUpvote />
+              </p>
+            </Link>
           )}
 
           <h2> {upvotes?.length}</h2>
@@ -173,22 +193,32 @@ const Vote = ({ data }) => {
 
         <div className="flex items-center gap-1">
           <div>
-            {user && blocked ? (
+            {user ? (
               <div>
-                {!IsDownVoted ? (
-                  <button onClick={handleDown} className="text-xl">
-                    <BiDownvote />{" "}
-                  </button>
+                {blocked ? (
+                  <div>
+                    {!IsDownVoted ? (
+                      <button onClick={handleDown} className="text-xl">
+                        <BiDownvote />{" "}
+                      </button>
+                    ) : (
+                      <p className="text-xl">
+                        <BiSolidDownvote />
+                      </p>
+                    )}
+                  </div>
                 ) : (
                   <p className="text-xl">
-                    <BiSolidDownvote />
+                    <BiDownvote />{" "}
                   </p>
                 )}
               </div>
             ) : (
-              <p className="text-xl">
-                <BiDownvote />{" "}
-              </p>
+              <Link to={"/login"}>
+                <p className="text-xl">
+                  <BiDownvote />{" "}
+                </p>
+              </Link>
             )}
           </div>
 
