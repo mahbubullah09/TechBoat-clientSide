@@ -6,7 +6,7 @@ import ReviewCard from './ReviewCard';
 
 const Review = ({data}) => {
     const id = data?._id
-    const [RF, setRF] = useState(null);
+    
 
     const { user } = useContext(AuthContext);
 
@@ -129,7 +129,7 @@ const Review = ({data}) => {
         <hr />
 
      <div className='w-full'>
-     <ReviewCard id={id} RF={RF} />
+     <ReviewCard id={id}  />
      </div>
             
             

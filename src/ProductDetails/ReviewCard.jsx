@@ -17,7 +17,7 @@ import ReviewCardStracture from "./ReviewCardStracture";
 import useAxiosPublic from "../hooks/usePublic";
 import { useQuery } from "@tanstack/react-query";
 
-const ReviewCard = ({ id, Rf }) => {
+const ReviewCard = ({ id, }) => {
  
   console.log(id);
 
@@ -25,7 +25,7 @@ const ReviewCard = ({ id, Rf }) => {
   const axiosPublic = useAxiosPublic();
 
   const { data: reviewed = [], refetch } = useQuery({
-    queryKey: ["review", id,RF],
+    queryKey: ["review", id],
     queryFn: async () => {
       const res = await axiosPublic.get(`/review/products?gadget_id=${id}`, {
         withCredentials: true,
