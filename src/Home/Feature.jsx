@@ -51,7 +51,7 @@ const Feature = () => {
             <div>
                 <h2 className='my-6 text-black text-4xl text-center font-bold'>Feature <span className=' text-[#0f829f]'>Products</span></h2>
             </div>
-             <div className='grid grid-cols-3 gap-8  my-4'>
+             <div className='grid grid-cols-1 md:grid-cols-3 gap-8  my-4'>
                 
                 {
                     data.slice(0,6).map((data, i) => <CheckData key={i} data={data}/>)

@@ -56,7 +56,7 @@ const Products = () => {
        </form>
       </div>
 
-      <div className="grid grid-cols-4 gap-2  my-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2  my-4">
         {sortedData.map((data, i) => (
           <ProductCard key={i} data={data} />
         ))}

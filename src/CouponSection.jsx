@@ -50,7 +50,7 @@ const [valid,setValid] = useState([])
 
   return (
     <div>
-      <div className=" max-w-6xl">
+      <div className=" w-full lg:max-w-6xl">
         <Swiper
           autoplay={{
             delay: 2500,
