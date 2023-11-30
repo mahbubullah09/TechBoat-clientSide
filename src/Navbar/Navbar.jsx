@@ -16,7 +16,7 @@ const Navbar = () => {
   const { data: role } = useQuery({
     queryKey: ["/user", user_mail],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/user/email?email=${user_mail}`);
+      const res = await axiosPublic.get(`/user/email?email=${user_mail}`,{ withCredentials: true });
       return res.data[0].role;
     },
   });

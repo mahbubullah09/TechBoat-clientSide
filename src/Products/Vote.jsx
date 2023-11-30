@@ -34,7 +34,7 @@ const Vote = ({ data }) => {
   const { data: upvotes = [], refetch } = useQuery({
     queryKey: ["upvotes", id],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/upvotes/products?product_id=${id}`);
+      const res = await axiosPublic.get(`/upvotes/products?product_id=${id}`, { withCredentials: true });
       return res.data;
     },
   });
@@ -42,7 +42,7 @@ const Vote = ({ data }) => {
   const { data: Voted = [] } = useQuery({
     queryKey: ["upvotes", user_mail, RF],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/upvotes/email?email=${user_mail}`);
+      const res = await axiosPublic.get(`/upvotes/email?email=${user_mail}`, { withCredentials: true });
       return res.data;
     }
   });
@@ -60,7 +60,7 @@ const Vote = ({ data }) => {
   const { data: downvotes = [], refetch: DownRf } = useQuery({
     queryKey: ["downvotes", id],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/downvotes/products?product_id=${id}`);
+      const res = await axiosPublic.get(`/downvotes/products?product_id=${id}`,{ withCredentials: true });
       return res.data;
     },
   });
@@ -68,7 +68,7 @@ const Vote = ({ data }) => {
   const { data: DownVoted = [] } = useQuery({
     queryKey: ["downvotes", user_mail, DRF],
     queryFn: async () => {
-      const res = await axiosPublic.get(`/downvotes/email?email=${user_mail}`);
+      const res = await axiosPublic.get(`/downvotes/email?email=${user_mail}`,{ withCredentials: true });
       return res.data;
     },
   });

@@ -8,38 +8,26 @@ import Swal from "sweetalert2";
 import ProductRow from "./ProductRow";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useAxiosPublic from "../../hooks/usePublic";
+import { useQuery } from "@tanstack/react-query";
 
 const MyProducts = () => {
   const { user } = useContext(AuthContext);
-  const [products, setproducts] = useState([]);
-  console.log(products);
-  const axiosPublic = useAxiosPublic();
+
 
   const User_Mail =user?.email
 
 
 
 
-  const url = `http://localhost:5000/product/${user?.email}`;
+  const axiosPublic = useAxiosPublic();
 
-  useEffect(() => {
-    // axios.get(url, { withCredentials: true })
-    // .then((res) => {
-    //   setproducts(res.data);
-    // });
-
-    // axiosPublic.get(`http://localhost:5000/product/${User_Mail}}`)
-    // .then((res) => {
-    //     setproducts(res.data);
-    // })
-    // .catch((error) => {
-    //   console.error(error);
-    // });
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setproducts(data));
-  }, [axiosPublic, User_Mail ,url]);
+  const { data: products = [], refetch } = useQuery({
+    queryKey: ["product", User_Mail],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/product/${User_Mail}`, { withCredentials: true });
+      return res.data;
+    },
+  });
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -61,11 +49,9 @@ const MyProducts = () => {
 
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              const remaining = products.filter(
-                (products) => products._id !== id
-              );
+            
 
-              setproducts(remaining);
+              refetch()
             }
           });
       }
@@ -85,20 +71,14 @@ const MyProducts = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          const remaining = products.filter((products) => products._id !== id);
-
-          const updated = products.find((products) => products._id !== id);
-          updated.status = "confirm";
-          const newproducts = [updated, ...remaining];
-          setproducts(newproducts);
+         
+          refetch()
         }
       });
   };
   return (
     <div>
-      {/* <Helmet>
-        <title>RoomJet-My products</title>
-      </Helmet> */}
+
 
       <div className="overflow-x-auto my-20">
         <table className="table">

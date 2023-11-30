@@ -2,42 +2,28 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../../hooks/usePublic";
+import { useQuery } from "@tanstack/react-query";
 
 const ProductRow = ({ products, handleDelete, handleUpdate }) => {
   console.log(products);
 
-  const id = products?.id;
-
-  const [UV, setUV] = useState([]);
+  const id = products?._id;
   const axiosPublic = useAxiosPublic();
-  
- 
+  console.log(id);
 
-  useEffect(() => {
-    // //    axios.get(url, {withCredentials:true})
-    // //    .then(res => {
-    // //     setBookings(res.data)
-    // //    })
 
-    // fetch(`http://localhost:5000/`)
-    //   .then((res) => res.json())
-    //   .then((data) => setUV(data));
 
-      axiosPublic.get(`/upvotes/products?product_id=${id}`)
-      .then((res) => {
-        setUV(res.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [id,axiosPublic]);
+  const { data: UV = [], refetch } = useQuery({
+    queryKey: ["upvotes", id],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/upvotes/products?product_id=${id}`, { withCredentials: true });
+      return res.data;
+    },
+  });
 
 
   
-//   const time = moment(date, "YYYYMMDD").fromNow();
-//   console.log(time);
 
-  //compare booking date
 
   
 
@@ -66,7 +52,7 @@ const ProductRow = ({ products, handleDelete, handleUpdate }) => {
               onClick={() => handleDelete(products?._id)}
               className="w-24 bg-[#FF3811] py-2 px-4 rounded text-white"
             >
-              Cancel
+              Delete
             </button>
          
             
