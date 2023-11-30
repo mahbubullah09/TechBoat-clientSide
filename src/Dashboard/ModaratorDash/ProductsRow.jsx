@@ -45,7 +45,7 @@ const ProductsRow = ({ products, handleDelete }) => {
     console.log(feature);
 
 
-    fetch("http://localhost:5000/features", {
+    fetch("https://tech-boat-server.vercel.app/features", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -87,7 +87,7 @@ const ProductsRow = ({ products, handleDelete }) => {
     console.log(productInfo);
    
 
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://tech-boat-server.vercel.app/products/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

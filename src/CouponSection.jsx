@@ -28,7 +28,7 @@ const CouponSection = () => {
   const { data: coupons = [] } = useQuery({
     queryKey: ["coupons"],
     queryFn: async () => {
-      const res = await axiosPublic.get(`http://localhost:5000/coupons`);
+      const res = await axiosPublic.get(`https://tech-boat-server.vercel.app/coupons`);
       return res.data;
     },
   });

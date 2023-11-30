@@ -89,7 +89,7 @@ const Vote = ({ data }) => {
     };
     console.log(addVote);
 
-    fetch("http://localhost:5000/upvotes", {
+    fetch("https://tech-boat-server.vercel.app/upvotes", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -121,7 +121,7 @@ const Vote = ({ data }) => {
     };
     console.log(addVote);
 
-    fetch("http://localhost:5000/downvotes", {
+    fetch("https://tech-boat-server.vercel.app/downvotes", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -45,7 +45,7 @@ const ModReview = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allproducts/${id}`, {
+        fetch(`https://tech-boat-server.vercel.app/allproducts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

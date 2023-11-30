@@ -6,23 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 const Products = () => {
     const [search, setSearch ] = useState('')
   const axiosPublic = useAxiosPublic();
-  // const [data, setData] = useState([]);
 
-  // useEffect(() => {
-    //         fetch('http://localhost:5000/products')
-    //         .then(response => response.json())
-
-    //  .then(data => setData(data))
-
-  //   axiosPublic
-  //     .get(`/products/search?search=${search}`)
-  //     .then((res) => {
-  //       setData(res.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, [axiosPublic,search]);
 
   const {data :  products = []} = useQuery({
     queryKey: ["products", search ? search : ""],

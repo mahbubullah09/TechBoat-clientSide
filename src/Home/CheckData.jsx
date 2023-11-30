@@ -14,7 +14,7 @@ const CheckData = ({data}) => {
 
 
 useEffect(() => {
-    //         fetch('http://localhost:5000/products')
+    //         fetch('https://tech-boat-server.vercel.app/products')
     //         .then(response => response.json())
 
     //  .then(data => setData(data))

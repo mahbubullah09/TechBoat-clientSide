@@ -24,7 +24,7 @@ const CouponForm = () => {
         }
         console.log(coupon);
 
-        fetch("http://localhost:5000/coupons", {
+        fetch("https://tech-boat-server.vercel.app/coupons", {
             method: "POST",
             headers: {
               "content-type": "application/json",

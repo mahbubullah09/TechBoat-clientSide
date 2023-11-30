@@ -11,7 +11,7 @@ const Coupons = () => {
   const { user } = useContext(AuthContext);
   const [products, setproducts] = useState([]);
   console.log(products);
-  const url = `http://localhost:5000/coupons`;
+  const url = `https://tech-boat-server.vercel.app/coupons`;
 
   useEffect(() => {
     //     axios.get(url, { withCredentials: true }).then((res) => {
@@ -34,7 +34,7 @@ const Coupons = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coupons/${id}`, {
+        fetch(`https://tech-boat-server.vercel.app/coupons/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

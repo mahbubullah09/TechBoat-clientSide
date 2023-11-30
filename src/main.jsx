@@ -31,11 +31,13 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import CouponForm from './Dashboard/Admin/Coupon/CouponForm';
 import UpdateCoupon from './Dashboard/Admin/Coupon/UpdateCoupon';
 import CouponDetails from './Dashboard/Admin/Coupon/CouponDetails';
+import ErrorPage from './Authentication/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -69,6 +71,7 @@ const router = createBrowserRouter([
   {
     path: "userdashboard",
     element: <DashLayout/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "addproduct",
@@ -87,7 +90,7 @@ const router = createBrowserRouter([
         element:
           <UpdateProduct/>,
         
-         loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+         loader: ({params}) => fetch(`https://tech-boat-server.vercel.app/products/${params.id}`)
       },
      
     ],
@@ -95,6 +98,7 @@ const router = createBrowserRouter([
   {
     path: "moddashboard",
     element: <ModDash/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "productreview",
@@ -119,6 +123,7 @@ const router = createBrowserRouter([
   {
     path: "admindashboard",
     element: <AdminDash/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "statistics",
@@ -142,7 +147,7 @@ const router = createBrowserRouter([
         element:
           <UpdateCoupon/>,
         
-         loader: ({params}) => fetch(`http://localhost:5000/coupons/${params.id}`)
+         loader: ({params}) => fetch(`https://tech-boat-server.vercel.app/coupons/${params.id}`)
       },
   
       {
@@ -150,7 +155,7 @@ const router = createBrowserRouter([
         element:
           <CouponDetails/>,
         
-         loader: ({params}) => fetch(`http://localhost:5000/coupons/${params.id}`)
+         loader: ({params}) => fetch(`https://tech-boat-server.vercel.app/coupons/${params.id}`)
       },
   
    

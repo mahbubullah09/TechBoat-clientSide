@@ -1,6 +1,7 @@
 import Tags from "./Tag";
 import Tag from "./Tag";
 import TimeAgo from "timeago-react";
+import { motion } from "framer-motion";
 
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -10,7 +11,16 @@ import Vote from "./Vote";
 const ProductCard = ({ data }) => {
   const { user } = useContext(AuthContext);
   return (
+    
     <div>
+      <motion.div
+     whileHover={{ scale: 1.1 }}
+     whileTap={{
+       scale: 0.9,
+       
+       borderRadius: "100%"
+     }}
+  >
       
         <div className="antialiased text-gray-900 ">
           <div className="bg-gray-200   flex items-center justify-center">
@@ -53,6 +63,7 @@ const ProductCard = ({ data }) => {
             </div>
           </div>
         </div>
+        </motion.div>
       
     </div>
   );

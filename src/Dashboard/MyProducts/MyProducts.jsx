@@ -40,7 +40,7 @@ const MyProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://tech-boat-server.vercel.app/products/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -60,7 +60,7 @@ const MyProducts = () => {
 
   const handleUpdate = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/products/${id}`, {
+    fetch(`https://tech-boat-server.vercel.app/products/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

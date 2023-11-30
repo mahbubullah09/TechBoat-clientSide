@@ -22,7 +22,7 @@ const ManageUsers = () => {
 
 
 
-//   const url = `http://localhost:5000/users`;
+//   const url = `https://tech-boat-server.vercel.app/users`;
 
 //   useEffect(() => {
 //     // axios.get(url, { withCredentials: true })
@@ -30,7 +30,7 @@ const ManageUsers = () => {
 //     //   setUsers(res.data);
 //     // });
 
-//     // axiosPublic.get(`http://localhost:5000/users`)
+//     // axiosPublic.get(`https://tech-boat-server.vercel.app/users`)
 //     // .then((res) => {
 //     //     setUsers(res.data);
 //     // })
@@ -68,7 +68,7 @@ const ManageUsers = () => {
 
    
 
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`https://tech-boat-server.vercel.app/users/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -94,7 +94,7 @@ const ManageUsers = () => {
 
   
 
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`https://tech-boat-server.vercel.app/users/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -119,7 +119,7 @@ const ManageUsers = () => {
     console.log(id);
 
    
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`https://tech-boat-server.vercel.app/users/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

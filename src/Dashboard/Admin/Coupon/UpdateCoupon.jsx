@@ -26,7 +26,7 @@ const UpdateCoupon = () => {
         }
         console.log(coupon);
 
-        fetch(`http://localhost:5000/coupons/${id}`, {
+        fetch(`https://tech-boat-server.vercel.app/coupons/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

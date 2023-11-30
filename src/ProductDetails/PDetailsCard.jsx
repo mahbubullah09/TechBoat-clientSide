@@ -22,7 +22,7 @@ const PDetailsCard = ({ data }) => {
     };
     console.log(addReport);
 
-    fetch("http://localhost:5000/reports", {
+    fetch("https://tech-boat-server.vercel.app/reports", {
       method: "POST",
       headers: {
         "content-type": "application/json",

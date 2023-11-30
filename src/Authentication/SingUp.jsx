@@ -48,7 +48,7 @@ const SingUp = () => {
           const loggeinUser = { email };
 
           axios
-            .post("http://localhost:5000/jwt", loggeinUser, {
+            .post("https://tech-boat-server.vercel.app/jwt", loggeinUser, {
               withCredentials: true,
             })
             .then((res) => {

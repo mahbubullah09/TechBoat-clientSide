@@ -42,7 +42,7 @@ const Reported = () => {
     }).then((result) => {
         if (result.isConfirmed) {
           //Deletereports
-          fetch(`http://localhost:5000/reports/${RID}`, {
+          fetch(`https://tech-boat-server.vercel.app/reports/${RID}`, {
             method: "DELETE",
           })
           
@@ -59,7 +59,7 @@ const Reported = () => {
 
             //delete products
 
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://tech-boat-server.vercel.app/products/${id}`, {
               method: "DELETE",
             })
               .then((res) => res.json())
@@ -91,7 +91,7 @@ const Reported = () => {
     }).then((result) => {
         if (result.isConfirmed) {
             console.log('keep');
-            fetch(`http://localhost:5000/reports/${id}`, {
+            fetch(`https://tech-boat-server.vercel.app/reports/${id}`, {
               method: "DELETE",
             })
             

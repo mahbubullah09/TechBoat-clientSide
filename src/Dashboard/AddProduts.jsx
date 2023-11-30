@@ -42,7 +42,7 @@ const AddProduct = () => {
     console.log(productInfo);
     reset();
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://tech-boat-server.vercel.app/products", {
         method: "POST",
         headers: {
           "content-type": "application/json",

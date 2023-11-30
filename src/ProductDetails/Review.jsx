@@ -33,7 +33,7 @@ const Review = ({data}) => {
       };
       console.log(addReview);
   
-      fetch("http://localhost:5000/reviews", {
+      fetch("https://tech-boat-server.vercel.app/reviews", {
         method: "POST",
         headers: {
           "content-type": "application/json",
