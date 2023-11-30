@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import moment from 'moment';
 import toast from 'react-hot-toast';
@@ -6,6 +6,7 @@ import ReviewCard from './ReviewCard';
 
 const Review = ({data}) => {
     const id = data?._id
+    const [RF, setRF] = useState(null);
 
     const { user } = useContext(AuthContext);
 
@@ -46,6 +47,7 @@ const Review = ({data}) => {
   
           if (data?.insertedId) {
             toast.success("Review added successfully!!");
+            setRF(new Date().getTime());
           }
         });
     };
@@ -127,7 +129,7 @@ const Review = ({data}) => {
         <hr />
 
      <div className='w-full'>
-     <ReviewCard id={id}/>
+     <ReviewCard id={id} RF={RF} />
      </div>
             
             

@@ -7,6 +7,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const PDetailsCard = ({ data }) => {
+
   console.log(data);
   const { user } = useContext(AuthContext);
   const user_mail = user?.email;
