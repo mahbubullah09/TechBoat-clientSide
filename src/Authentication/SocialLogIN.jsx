@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/usePublic";
+import axios from "axios";
 
 
 
@@ -18,20 +19,40 @@ const SocialLogIn = () => {
 
     const handleSocialSingin = () =>{
         googleLogin()
-        .then(res =>  {
+        .then(result =>  {
+
+
+            const user1 = result.user;
+            console.log(user1);
+    
+            const loggeinUser = { email: user1?.email };
+    
+            axios.post("http://localhost:5000/jwt", loggeinUser, {
+                withCredentials: true,
+              })
+              .then((res) => {
+                console.log(res.data);
+                if (res.data.success) {
+                  navigate(location.state ? location.state : "/");
+                  toast.success("Successfully login");
+                }
+              });
+
+
+
             const userInfo = {
-                name: res.user?.displayName,
-                email: res.user?.email,
+                name: result.user?.displayName,
+                email: result.user?.email,
                 role: 'user'
               };
               axiosPublic.post("/users", userInfo).then(() => {
-                toast.success('Succesfully logged in')
+                // toast.success('Succesfully logged in')
                 navigate(location?.state ? location.state : '/')
               });       
 
-    
-    })
-    .catch((error) => {
+           
+            })
+            .catch((error) => {
         Swal("Oops!", error.message, "error");
       });
     }
