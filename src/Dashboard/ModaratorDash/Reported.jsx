@@ -9,38 +9,25 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useAxiosPublic from "../../hooks/usePublic";
 import ReportedRow from "./ReportedRow";
+import { useQuery } from "@tanstack/react-query";
 
 const Reported = () => {
   const { user } = useContext(AuthContext);
-  const [reports, setreports] = useState([]);
-  console.log(reports);
+ 
   const axiosPublic = useAxiosPublic();
 
 
 
-
-
-  const url = `http://localhost:5000/reports`;
-
-  useEffect(() => {
-    // axios.get(url, { withCredentials: true })
-    // .then((res) => {
-    //   setreports(res.data);
-    // });
-
-    // axiosPublic.get(`http://localhost:5000/reports`)
-    // .then((res) => {
-    //     setreports(res.data);
-    // })
-    // .catch((error) => {
-    //   console.error(error);
-    // });
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setreports(data));
-  }, [axiosPublic, url]);
+  const { data: reports = [], refetch } = useQuery({
+    queryKey: ["reports"],
+    queryFn: async () => {
+      const res = await axiosPublic.get(`/reports`);
+      return res.data;
+    },
+  });
   console.log(reports);
+
+
 
   const handleDelete = (id,RID) => {
     console.log(id);
@@ -65,11 +52,8 @@ const Reported = () => {
   
               if (data.deletedCount > 0) {
                 
-                const remaining = reports.filter(
-                  (reports) => reports._id !== id
-                );
-  
-                setreports(remaining);
+              
+                refetch()
               }
             });
 
@@ -84,11 +68,8 @@ const Reported = () => {
     
                 if (data.deletedCount > 0) {
                   Swal.fire("Deleted!", "This product has been deleted.", "success");
-                //   const remaining = reports.filter(
-                //     (reports) => reports._id !== id
-                //   );
-    
-                //   setreports(remaining);
+               
+                refetch()
                 }
               });
 
@@ -120,11 +101,8 @@ const Reported = () => {
     
                 if (data.deletedCount > 0) {
                   Swal.fire("Keeped!", "This product has been Keeped.", "success");
-                  const remaining = reports.filter(
-                    (reports) => reports._id !== id
-                  );
-    
-                  setreports(remaining);
+               
+                  refetch()
                 }
               });
           }
@@ -134,10 +112,7 @@ const Reported = () => {
   
   return (
     <div>
-      {/* <Helmet>
-        <title>RoomJet-My products</title>
-      </Helmet> */}
-
+    
       <div className="overflow-x-auto my-20">
         <table className="table">
           {/* head */}
