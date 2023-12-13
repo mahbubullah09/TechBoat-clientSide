@@ -14,16 +14,17 @@ const Footer = () => {
         <div className="pt-0 pb-0">
             <ul tabIndex="0" className="text-white gap-8  flex flex-wrap justify-center  md:grid-cols-6 gap-5     ">
                 <li><Link to={'/'} >Home</Link></li>
-                <li><Link to={'/about'} >About Us</Link></li>
-                <li><Link to={'/faq'} >FAQ</Link></li>
-              
-                <li><Link to={'/rooms'} >Rooms</Link></li>
-                <li><Link to={'/mybookings'} >My Bookings</Link></li>
+           
+                <li><Link to={'/products'} >Products</Link></li>
 
             </ul>
         </div>
         <div>
-            <div className=" text-white pb-10 text-3xl flex flex-wrap justify-center gap-6 md:grid-cols-6   ">
+          <p>  Email: techboat@gmail.com</p>
+          <p>Phone: 01909598003</p>
+        </div>
+        <div>
+            <div className=" text-white  text-3xl flex flex-wrap justify-center gap-6 md:grid-cols-6   ">
               
                 <FaTwitter></FaTwitter>
                 <FaYoutube></FaYoutube>
@@ -33,6 +34,9 @@ const Footer = () => {
 
                
             </div>
+        </div>
+        <div className="pb-10">
+            <p>All copyright reserved @techboat</p>
         </div>
     </footer>
             

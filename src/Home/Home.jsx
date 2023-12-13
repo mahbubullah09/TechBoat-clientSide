@@ -8,6 +8,7 @@ import TimeAgo from "timeago-react";
 
 import Trending from "./Trending";
 import Feature from "./Feature";
+import Contact from "./Contact";
 
 const Home = () => {
   const data = [
@@ -41,6 +42,7 @@ const Home = () => {
       <Feature/>
 
       <Trending/>
+      <Contact/>
 
    
     </div>
