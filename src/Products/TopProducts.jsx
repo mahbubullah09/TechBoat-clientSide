@@ -15,6 +15,7 @@ import {
   Navigation,
 } from "swiper/modules";
 import TopProductsCard from "./TopProductsCard";
+import ProductCard from "./ProductCard";
 
 const TopProducts = () => {
   const axiosPublic = useAxiosPublic();
@@ -67,7 +68,7 @@ const TopProducts = () => {
           <div className="mb-28">
             {topp.map((data, idx) => (
               <SwiperSlide key={idx}>
-                <TopProductsCard key={idx} data={data} />
+                <ProductCard key={idx} data={data} />
               </SwiperSlide>
             ))}
           </div>
@@ -113,7 +114,7 @@ const TopProducts = () => {
           <div className="mb-28">
             {topp.map((data, idx) => (
               <SwiperSlide key={idx}>
-                <TopProductsCard key={idx} data={data} />
+                <ProductCard key={idx} data={data} />
               </SwiperSlide>
             ))}
           </div>

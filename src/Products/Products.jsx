@@ -38,9 +38,7 @@ const Products = () => {
 
   return (
     <div className="max-w-6xl mx-auto">
-        <div className="my-16">
-        <TopProducts />
-      </div>
+   
       <div className="max-w-6xl mx-auto flex justify-center items-center">
         
         <form onSubmit={handleSearch}>
@@ -55,6 +53,9 @@ const Products = () => {
             Search
           </button>
         </form>
+      </div>
+      <div className="my-16">
+        <TopProducts />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2  my-4">
